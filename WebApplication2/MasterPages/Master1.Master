@@ -1,0 +1,113 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Master1.master.vb" Inherits="TrustAcademyPortal.Master1" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<script runat = "server">
+</script>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../Styles/Styles.css" rel="stylesheet" />
+    <title>Untitled Page</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server"   >
+          <asp:ScriptManager ID="ScriptManager1" runat="server">
+                </asp:ScriptManager>
+    <div style =" display:flex;flex-flow:column;flex-wrap:wrap" >
+       
+              
+                   
+                       <div>
+                           <asp:Image 
+                        ID="Image5" runat="server" 
+                        ImageUrl="~/Images/TRUST-ACADEMY3-e1429549503520.png" style="margin-left: 0px" 
+                      />
+                       </div>
+ 
+                       
+             
+                                       
+             
+                               
+              
+               
+                    
+   <asp:Panel runat="server">
+                                  </asp:Panel>
+                                      </div>
+                                      <div style="float:right">
+                                             <asp:Panel runat="server">
+                                  </asp:Panel>
+                                      </div>
+                         
+       
+          
+                <div>
+                        <asp:Label 
+                        ID="Label1" runat="server" Text="PORTAL" Font-Bold="True" 
+                        Font-Names="Arial Black" Font-Size="Larger" ForeColor="Black"></asp:Label>
+                </div>
+           
+       
+         
+
+         
+         
+
+        <div class="divMenu">
+            
+                    <asp:HyperLink ID="HlHome" runat="server" NavigateUrl="~/Student/LoggedIn.aspx" CssClass="MenuLink">Home</asp:HyperLink>
+                    <asp:HyperLink ID="hlStudExams" runat="server" NavigateUrl="~/Student/StudentReport.aspx" CssClass="MenuLink" Visible="False">Exam Results</asp:HyperLink>
+                    <asp:HyperLink ID="hlPayments" runat="server" NavigateUrl="~/Student/FeesPayments.aspx" CssClass="MenuLink" Visible="False">FeesPayments</asp:HyperLink>
+                    <asp:HyperLink ID="lnkReturningStudent" runat="server" NavigateUrl="~/Student/RegisterSubjects.aspx" CssClass="MenuLink" Visible="False" >Subject Registration</asp:HyperLink>
+                <asp:label ID="lnkLoggeduser" runat="server"   style="float:right"  CausesValidation="False" text ="Logged User"  CssClass ="LoginStatus"/> 
+             
+   
+                           <ajaxToolkit:RoundedCornersExtender ID="lnkLoggeduser_RoundedCornersExtender" runat="server" BehaviorID="lnkLoggeduser_RoundedCornersExtender" TargetControlID="lnkLoggeduser" />
+             
+   
+            <ajaxToolkit:HoverMenuExtender ID="lnkLogout_HoverMenuExtender" runat="server" BehaviorID="lnkLogout_HoverMenuExtender" DynamicServicePath="" TargetControlID="lnkLoggedUser" PopupControlID="PopUpMenuLogin" PopupPosition="Bottom" OffsetX="-20">
+                </ajaxToolkit:HoverMenuExtender>
+            
+            <div>
+                <asp:Panel CssClass="popupMenu" ID="PopUpMenuLogin" runat="server">
+                                <div style="border: 1px outset white; padding: 2px;background-color:black">
+                                    <div>
+                                        <asp:LinkButton ID="lnkLoginStats" runat="server"  Text="LogOut" CausesValidation="False" ForeColor="White" />
+                                    </div>
+                                    <div>
+                                        <asp:LinkButton ID="lnkChangePassword" runat="server" Text="Change Password" ForeColor="White" PostBackUrl="~/Admin/ChangePasswordPortal.aspx" />
+                                    </div>
+                                </div>
+                            </asp:Panel>
+            </div>
+
+                </div>
+            
+  <div>
+             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">          
+            
+                  </asp:ContentPlaceHolder>
+                              </div>
+        <div>
+             <table width ="100%">
+                                    <tr>
+                                        <td width ="50%" align ="right">
+                                               <asp:Label ID="Label2" runat="server" Text="©2019 Imela Technologies"></asp:Label>
+                                        </td>
+                                        <td width = "50%" align ="left">
+
+                                 <asp:Image ID="Image2" runat="server" Height="28px" ImageUrl="~/Images/Imela.png" Width="138px" />  
+
+                                        </td>
+                                    </tr>
+                                </table>
+        </div>
+    
+    </form>
+</body>
+</html>

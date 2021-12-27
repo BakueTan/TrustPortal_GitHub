@@ -1,0 +1,828 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9181EA4A-ADD7-4068-9081-F0E68133FE6E}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>TrustAcademyPortal</RootNamespace>
+    <AssemblyName>TrustAcademyPortal</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <SignAssembly>false</SignAssembly>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>TrustAcademyPortal.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>TrustAcademyPortal.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=19.1.0.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\Tangai\Documents\ASP.NET AJAX Control Toolkit\Bin\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="ASPNetSpell, Version=4.0.3.24577, Culture=neutral, PublicKeyToken=ed4c1e6166f7ca72, processorArchitecture=MSIL">
+      <HintPath>..\packages\Spell.Check.4.0.3.2\lib\net40\ASPNetSpell.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net40\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Windows\assembly\GAC_MSIL\Microsoft.ReportViewer.WebForms\12.0.0.0__89845dcd8080cc91\Microsoft.ReportViewer.WebForms.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\AssignStudentID.aspx" />
+    <Content Include="Admin\ChangePasswordPortal.aspx" />
+    <Content Include="Admin\CreateUserPortal_Custom.aspx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ASPNetSpellInclude\core\Default.aspx" />
+    <Content Include="ASPNetSpellInclude\core\dialog.js" />
+    <Content Include="ASPNetSpellInclude\debugging-test-scripts\Hello-World.aspx" />
+    <Content Include="ASPNetSpellInclude\debugging-test-scripts\support.txt" />
+    <Content Include="ASPNetSpellInclude\debugging-test-scripts\Test-Server-Ajax.aspx" />
+    <Content Include="ASPNetSpellInclude\dialog.html" />
+    <Content Include="ASPNetSpellInclude\dictionaries\custom.txt" />
+    <Content Include="ASPNetSpellInclude\dictionaries\language-rules\banned-words.txt" />
+    <Content Include="ASPNetSpellInclude\dictionaries\language-rules\common-mistakes.txt" />
+    <Content Include="ASPNetSpellInclude\dictionaries\language-rules\enforced-corrections.txt" />
+    <Content Include="ASPNetSpellInclude\dictionaries\README.txt" />
+    <Content Include="ASPNetSpellInclude\include.js" />
+    <Content Include="ASPNetSpellInclude\license.txt" />
+    <Content Include="ASPNetSpellInclude\support.txt" />
+    <Content Include="ASPNetSpellInclude\themes\bright\ajax-loader.gif" />
+    <Content Include="ASPNetSpellInclude\themes\bright\context-menu.css" />
+    <Content Include="ASPNetSpellInclude\themes\bright\dialog-window.css" />
+    <Content Include="ASPNetSpellInclude\themes\bright\ieonly.css" />
+    <Content Include="ASPNetSpellInclude\themes\buttons\spellicon.gif" />
+    <Content Include="ASPNetSpellInclude\themes\buttons\spelliconover.gif" />
+    <Content Include="ASPNetSpellInclude\themes\classic\ajax-loader.gif" />
+    <Content Include="ASPNetSpellInclude\themes\classic\context-menu.css" />
+    <Content Include="ASPNetSpellInclude\themes\classic\dialog-window.css" />
+    <Content Include="ASPNetSpellInclude\themes\classic\gwiggle.png" />
+    <Content Include="ASPNetSpellInclude\themes\classic\ieonly.css" />
+    <Content Include="ASPNetSpellInclude\themes\classic\wiggle.png" />
+    <Content Include="ASPNetSpellInclude\themes\clean\ajax-loader.gif" />
+    <Content Include="ASPNetSpellInclude\themes\clean\context-menu.css" />
+    <Content Include="ASPNetSpellInclude\themes\clean\dialog-window.css" />
+    <Content Include="ASPNetSpellInclude\themes\clean\gwiggle.png" />
+    <Content Include="ASPNetSpellInclude\themes\clean\ieonly.css" />
+    <Content Include="ASPNetSpellInclude\themes\clean\wiggle.png" />
+    <Content Include="ASPNetSpellInclude\themes\modern\ajax-loader.gif" />
+    <Content Include="ASPNetSpellInclude\themes\modern\context-menu.css" />
+    <Content Include="ASPNetSpellInclude\themes\modern\dialog-window.css" />
+    <Content Include="ASPNetSpellInclude\themes\modern\gwiggle.png" />
+    <Content Include="ASPNetSpellInclude\themes\modern\ieonly.css" />
+    <Content Include="ASPNetSpellInclude\themes\modern\wiggle.png" />
+    <Content Include="ASPNetSpellInclude\themes\modern\xp.gif" />
+    <Content Include="ASPNetSpellInclude\translations\af.js" />
+    <Content Include="ASPNetSpellInclude\translations\ar.js" />
+    <Content Include="ASPNetSpellInclude\translations\be.js" />
+    <Content Include="ASPNetSpellInclude\translations\bg.js" />
+    <Content Include="ASPNetSpellInclude\translations\ca.js" />
+    <Content Include="ASPNetSpellInclude\translations\cn.js" />
+    <Content Include="ASPNetSpellInclude\translations\cs.js" />
+    <Content Include="ASPNetSpellInclude\translations\cy.js" />
+    <Content Include="ASPNetSpellInclude\translations\da.js" />
+    <Content Include="ASPNetSpellInclude\translations\de.js" />
+    <Content Include="ASPNetSpellInclude\translations\el.js" />
+    <Content Include="ASPNetSpellInclude\translations\en.js" />
+    <Content Include="ASPNetSpellInclude\translations\es.js" />
+    <Content Include="ASPNetSpellInclude\translations\et.js" />
+    <Content Include="ASPNetSpellInclude\translations\fa.js" />
+    <Content Include="ASPNetSpellInclude\translations\fi.js" />
+    <Content Include="ASPNetSpellInclude\translations\fr.js" />
+    <Content Include="ASPNetSpellInclude\translations\ga.js" />
+    <Content Include="ASPNetSpellInclude\translations\gl.js" />
+    <Content Include="ASPNetSpellInclude\translations\hi.js" />
+    <Content Include="ASPNetSpellInclude\translations\hr.js" />
+    <Content Include="ASPNetSpellInclude\translations\hu.js" />
+    <Content Include="ASPNetSpellInclude\translations\id.js" />
+    <Content Include="ASPNetSpellInclude\translations\is.js" />
+    <Content Include="ASPNetSpellInclude\translations\it.js" />
+    <Content Include="ASPNetSpellInclude\translations\iw.js" />
+    <Content Include="ASPNetSpellInclude\translations\ja.js" />
+    <Content Include="ASPNetSpellInclude\translations\ko.js" />
+    <Content Include="ASPNetSpellInclude\translations\lt.js" />
+    <Content Include="ASPNetSpellInclude\translations\lv.js" />
+    <Content Include="ASPNetSpellInclude\translations\mk.js" />
+    <Content Include="ASPNetSpellInclude\translations\ms.js" />
+    <Content Include="ASPNetSpellInclude\translations\mt.js" />
+    <Content Include="ASPNetSpellInclude\translations\nl.js" />
+    <Content Include="ASPNetSpellInclude\translations\no.js" />
+    <Content Include="ASPNetSpellInclude\translations\pl.js" />
+    <Content Include="ASPNetSpellInclude\translations\pt.js" />
+    <Content Include="ASPNetSpellInclude\translations\ro.js" />
+    <Content Include="ASPNetSpellInclude\translations\ru.js" />
+    <Content Include="ASPNetSpellInclude\translations\simple.js" />
+    <Content Include="ASPNetSpellInclude\translations\sk.js" />
+    <Content Include="ASPNetSpellInclude\translations\sl.js" />
+    <Content Include="ASPNetSpellInclude\translations\sq.js" />
+    <Content Include="ASPNetSpellInclude\translations\sr.js" />
+    <Content Include="ASPNetSpellInclude\translations\sw.js" />
+    <Content Include="ASPNetSpellInclude\translations\template.js" />
+    <Content Include="ASPNetSpellInclude\translations\th.js" />
+    <Content Include="ASPNetSpellInclude\translations\tl.js" />
+    <Content Include="ASPNetSpellInclude\translations\tr.js" />
+    <Content Include="ASPNetSpellInclude\translations\tw.js" />
+    <Content Include="ASPNetSpellInclude\translations\uk.js" />
+    <Content Include="ASPNetSpellInclude\translations\vi.js" />
+    <Content Include="ASPNetSpellInclude\translations\yi.js" />
+    <Content Include="Images\Assign.png" />
+    <Content Include="Images\Delete.png" />
+    <Content Include="Images\Loader.gif" />
+    <Content Include="Images\noimage.jpg" />
+    <Content Include="Images\Reverse.png" />
+    <Content Include="Images\SignIn %281%29.png" />
+    <Content Include="Images\SignOut.png" />
+    <Content Include="Admin\ViewApplications.aspx" />
+    <Content Include="Images\Upload.png" />
+    <Content Include="Images\View.png" />
+    <Content Include="Student\EnrolForm.aspx" />
+    <Content Include="Student\OnlineApplication\ApplicationSubmitted.aspx" />
+    <Content Include="SessionExpired.aspx" />
+    <Content Include="MasterPages\WebForm13.aspx" />
+    <Content Include="SqlServerTypes\Loader.cs" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Admin\ApproveApplication.aspx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Student\OnlineApplication\DeclineLetter.aspx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Student\OnlineApplication\ApplcationSignUp.aspx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Student\OnlineApplication\ApplicationForm.aspx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Student\OnlineApplication\ApplicationLogin.aspx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Student\OnlineApplication\ApplicationStatus.aspx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Student\BusinessSchool.aspx" />
+    <Content Include="Admin\ChangePasswordOnlineApplication.aspx" />
+    <Content Include="Admin\RecoverPasswordOnlineApplication.aspx" />
+    <Content Include="Admin\frmBillingCutOff.aspx" />
+    <Content Include="Admin\frmUserAdmin.aspx" />
+    <Content Include="Student\OnlineApplication\OfferLetter.aspx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Student\OnlineApplication\PendingDecision.aspx" />
+    <Content Include="Student\OnlineApplication\RegConfirm.aspx" />
+    <Content Include="Admin\RecoverPasswordPortal.aspx" />
+    <Content Include="Images\TRUST-ACADEMY3-e1429549503520.png" />
+    <Content Include="Student\RegisterSubjects.aspx" />
+    <Content Include="Styles\Styles.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Student\DiplomaPage.aspx" />
+    <Content Include="Student\Dtel.aspx" />
+    <Content Include="WebForm11.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\AssignStudentID.aspx.designer.vb">
+      <DependentUpon>AssignStudentID.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AssignStudentID.aspx.vb">
+      <DependentUpon>AssignStudentID.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ChangePasswordPortal.aspx.designer.vb">
+      <DependentUpon>ChangePasswordPortal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ChangePasswordPortal.aspx.vb">
+      <DependentUpon>ChangePasswordPortal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\CreateUserPortal_Custom.aspx.designer.vb">
+      <DependentUpon>CreateUserPortal_Custom.aspx</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Admin\CreateUserPortal_Custom.aspx.vb">
+      <DependentUpon>CreateUserPortal_Custom.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="clsUserLogin.vb" />
+    <Compile Include="GeneralClasses.vb" />
+    <Compile Include="dsStudentSujects.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsStudentSujects.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Enrol.vb" />
+    <Compile Include="MasterPages\Admin.Master.designer.vb">
+      <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPages\Admin.Master.vb">
+      <DependentUpon>Admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ViewApplications.aspx.designer.vb">
+      <DependentUpon>ViewApplications.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ViewApplications.aspx.vb">
+      <DependentUpon>ViewApplications.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Settings.vb" />
+    <Compile Include="Student\EnrolForm.aspx.designer.vb">
+      <DependentUpon>EnrolForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Student\EnrolForm.aspx.vb">
+      <DependentUpon>EnrolForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student\OnlineApplication\ApplicationSubmitted.aspx.designer.vb">
+      <DependentUpon>ApplicationSubmitted.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Student\OnlineApplication\ApplicationSubmitted.aspx.vb">
+      <DependentUpon>ApplicationSubmitted.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="SessionExpired.aspx.designer.vb">
+      <DependentUpon>SessionExpired.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SessionExpired.aspx.vb">
+      <DependentUpon>SessionExpired.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="MasterPages\WebForm13.aspx.designer.vb">
+      <DependentUpon>WebForm13.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPages\WebForm13.aspx.vb">
+      <DependentUpon>WebForm13.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="modDataAccess.vb" />
+    <Compile Include="modGeneral.vb" />
+    <Compile Include="Admin\ApproveApplication.aspx.designer.vb">
+      <DependentUpon>ApproveApplication.aspx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Admin\ApproveApplication.aspx.vb">
+      <DependentUpon>ApproveApplication.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Student\OnlineApplication\DeclineLetter.aspx.designer.vb">
+      <DependentUpon>DeclineLetter.aspx</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Student\OnlineApplication\DeclineLetter.aspx.vb">
+      <DependentUpon>DeclineLetter.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Student\OnlineApplication\ApplcationSignUp.aspx.designer.vb">
+      <DependentUpon>ApplcationSignUp.aspx</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Student\OnlineApplication\ApplcationSignUp.aspx.vb">
+      <DependentUpon>ApplcationSignUp.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="MasterPages\Application.Master.designer.vb">
+      <DependentUpon>Application.Master</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="MasterPages\Application.Master.vb">
+      <DependentUpon>Application.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Student\OnlineApplication\ApplicationForm.aspx.designer.vb">
+      <DependentUpon>ApplicationForm.aspx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Student\OnlineApplication\ApplicationForm.aspx.vb">
+      <DependentUpon>ApplicationForm.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Student\OnlineApplication\ApplicationLogin.aspx.designer.vb">
+      <DependentUpon>ApplicationLogin.aspx</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Student\OnlineApplication\ApplicationLogin.aspx.vb">
+      <DependentUpon>ApplicationLogin.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Student\OnlineApplication\ApplicationStatus.aspx.designer.vb">
+      <DependentUpon>ApplicationStatus.aspx</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Student\OnlineApplication\ApplicationStatus.aspx.vb">
+      <DependentUpon>ApplicationStatus.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Student\BusinessSchool.aspx.designer.vb">
+      <DependentUpon>BusinessSchool.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Student\BusinessSchool.aspx.vb">
+      <DependentUpon>BusinessSchool.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ChangePasswordOnlineApplication.aspx.designer.vb">
+      <DependentUpon>ChangePasswordOnlineApplication.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ChangePasswordOnlineApplication.aspx.vb">
+      <DependentUpon>ChangePasswordOnlineApplication.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Student\clsEnrol.vb" />
+    <Compile Include="Staff\clsLect.vb" />
+    <Compile Include="Admin\clsUser.vb" />
+    <Compile Include="Admin\CreateUserPortal.aspx.designer.vb">
+      <DependentUpon>CreateUserPortal.aspx</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Admin\CreateUserPortal.aspx.vb">
+      <DependentUpon>CreateUserPortal.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="dbConnection.vb" />
+    <Compile Include="App_Data\dsStudApp.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsStudApp.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\RecoverPasswordOnlineApplication.aspx.designer.vb">
+      <DependentUpon>RecoverPasswordOnlineApplication.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\RecoverPasswordOnlineApplication.aspx.vb">
+      <DependentUpon>RecoverPasswordOnlineApplication.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Admin\frmBillingCutOff.aspx.designer.vb">
+      <DependentUpon>frmBillingCutOff.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\frmBillingCutOff.aspx.vb">
+      <DependentUpon>frmBillingCutOff.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Admin\frmUserAdmin.aspx.designer.vb">
+      <DependentUpon>frmUserAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\frmUserAdmin.aspx.vb">
+      <DependentUpon>frmUserAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Student\LoggedIn.aspx.designer.vb">
+      <DependentUpon>LoggedIn.aspx</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Student\LoggedIn.aspx.vb">
+      <DependentUpon>LoggedIn.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Student\FeesPaymentsvb.vb" />
+    <Compile Include="MasterPages\Master1.Master.designer.vb">
+      <DependentUpon>Master1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPages\Master1.Master.vb">
+      <DependentUpon>Master1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Student\OnlineApplication\csStudClasses.vb" />
+    <Compile Include="Student\OnlineApplication\OfferLetter.aspx.designer.vb">
+      <DependentUpon>OfferLetter.aspx</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Student\OnlineApplication\OfferLetter.aspx.vb">
+      <DependentUpon>OfferLetter.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Student\OnlineApplication\PendingDecision.aspx.designer.vb">
+      <DependentUpon>PendingDecision.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Student\OnlineApplication\PendingDecision.aspx.vb">
+      <DependentUpon>PendingDecision.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Student\OnlineApplication\RegConfirm.aspx.designer.vb">
+      <DependentUpon>RegConfirm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Student\OnlineApplication\RegConfirm.aspx.vb">
+      <DependentUpon>RegConfirm.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Admin\RecoverPasswordPortal.aspx.designer.vb">
+      <DependentUpon>RecoverPasswordPortal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\RecoverPasswordPortal.aspx.vb">
+      <DependentUpon>RecoverPasswordPortal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student\RegisterSubjects.aspx.designer.vb">
+      <DependentUpon>RegisterSubjects.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Student\RegisterSubjects.aspx.vb">
+      <DependentUpon>RegisterSubjects.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Student\Reports.aspx.designer.vb">
+      <DependentUpon>Reports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Student\Reports.aspx.vb">
+      <DependentUpon>Reports.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="MasterPages\LectMaster.Master.designer.vb">
+      <DependentUpon>LectMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPages\LectMaster.Master.vb">
+      <DependentUpon>LectMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student\StudentReport.aspx.designer.vb">
+      <DependentUpon>StudentReport.aspx</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Student\StudentReport.aspx.vb">
+      <DependentUpon>StudentReport.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Student\Unpaid.aspx.designer.vb">
+      <DependentUpon>Unpaid.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Student\Unpaid.aspx.vb">
+      <DependentUpon>Unpaid.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Student\HighSchoolReport.aspx.designer.vb">
+      <DependentUpon>HighSchoolReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Student\HighSchoolReport.aspx.vb">
+      <DependentUpon>HighSchoolReport.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Student\Redirection.aspx.designer.vb">
+      <DependentUpon>Redirection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Student\Redirection.aspx.vb">
+      <DependentUpon>Redirection.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Student\FeesPayments.aspx.designer.vb">
+      <DependentUpon>FeesPayments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Student\FeesPayments.aspx.vb">
+      <DependentUpon>FeesPayments.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Student\StudPers.aspx.designer.vb">
+      <DependentUpon>StudPers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Student\StudPers.aspx.vb">
+      <DependentUpon>StudPers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Staff\StaffPers.aspx.designer.vb">
+      <DependentUpon>StaffPers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\StaffPers.aspx.vb">
+      <DependentUpon>StaffPers.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Staff\EnterStudMarks.aspx.designer.vb">
+      <DependentUpon>EnterStudMarks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\EnterStudMarks.aspx.vb">
+      <DependentUpon>EnterStudMarks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student\DiplomaPage.aspx.designer.vb">
+      <DependentUpon>DiplomaPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Student\DiplomaPage.aspx.vb">
+      <DependentUpon>DiplomaPage.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Student\Dtel.aspx.designer.vb">
+      <DependentUpon>Dtel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Student\Dtel.aspx.vb">
+      <DependentUpon>Dtel.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="WebForm11.aspx.designer.vb">
+      <DependentUpon>WebForm11.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm11.aspx.vb">
+      <DependentUpon>WebForm11.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RptDeclineLetter.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RptAdmissionLetter2 - Backup.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptBusinessSchool.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptDiplomaTrans.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptDiplomaTransDtel.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <Content Include="Reports\rptFullTranscript.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <EmbeddedResource Include="Reports\rptStudentSubjects.rdlc" />
+    <EmbeddedResource Include="Reports\rptTrans2.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Content Include="Reports\rptFeesByDate.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\rptHsReport.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="Student\Report1.rdlc" />
+    <EmbeddedResource Include="Student\Report2.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\CONTACTUS.jpg" />
+    <Content Include="Admin\CreateUserPortal.aspx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Login.aspx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Exit 2.png" />
+    <Content Include="Images\home.jpg" />
+    <Content Include="Images\Keys 1.png" />
+    <Content Include="Images\Links 1.png" />
+    <Content Include="Student\LoggedIn.aspx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\marks.jpg" />
+    <Content Include="MasterPages\Master1.Master" />
+    <Content Include="Images\money.jpg" />
+    <Content Include="Images\Password Manager.png" />
+    <Content Include="Student\Reports.aspx" />
+    <Content Include="Images\sms.jpg" />
+    <Content Include="Student\StudentReport.aspx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\studs.jpg" />
+    <Content Include="Student\Unpaid.aspx" />
+    <Content Include="MasterPages\Application.Master">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Compile Include="Parents\clsPrnt.vb" />
+    <Compile Include="Login.aspx.designer.vb">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Login.aspx.vb">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Parents\Parents.aspx.designer.vb">
+      <DependentUpon>Parents.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Parents\Parents.aspx.vb">
+      <DependentUpon>Parents.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Content Include="MasterPages\Admin.Master" />
+    <None Include="App_Data\dsStudApp.xsc">
+      <DependentUpon>dsStudApp.xsd</DependentUpon>
+    </None>
+    <None Include="App_Data\dsStudApp.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsStudApp.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="App_Data\dsStudApp.xss">
+      <DependentUpon>dsStudApp.xsd</DependentUpon>
+    </None>
+    <Content Include="dsStudentSujects.xsc">
+      <DependentUpon>dsStudentSujects.xsd</DependentUpon>
+    </Content>
+    <Content Include="dsReports.xsc">
+      <DependentUpon>dsReports.xsd</DependentUpon>
+    </Content>
+    <Content Include="ASPNetSpellInclude\web.config" />
+    <Content Include="ASPNetSpellInclude\dictionaries\English %28International%29.dic" />
+    <Content Include="ASPNetSpellInclude\debugging-test-scripts\Test-Instalation.ashx" />
+    <Content Include="ASPNetSpellInclude\core\default.ashx" />
+    <None Include="dsReports.xsd" />
+    <Content Include="dsReports.xss">
+      <DependentUpon>dsReports.xsd</DependentUpon>
+    </Content>
+    <None Include="dsStudentSujects.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsStudentSujects.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="dsStudentSujects.xss">
+      <DependentUpon>dsStudentSujects.xsd</DependentUpon>
+    </Content>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\PublishProfiles\MySite.pubxml" />
+    <None Include="My Project\PublishProfiles\Profile1.pubxml" />
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="MasterPages\LectMaster.Master" />
+    <Content Include="Student\HighSchoolReport.aspx" />
+    <Content Include="Student\Redirection.aspx" />
+    <Content Include="Student\FeesPayments.aspx" />
+    <Content Include="Student\StudPers.aspx" />
+    <Content Include="Staff\StaffPers.aspx" />
+    <Content Include="Staff\EnterStudMarks.aspx" />
+    <Content Include="Parents\Parents.aspx" />
+    <Content Include="Images\Upload - Transfer Photos.png" />
+    <Content Include="Images\url.jpeg" />
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Qualifications\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>51460</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:51310/</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>http://localhost:51310/</IISAppRootUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

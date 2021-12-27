@@ -1,0 +1,1159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <Body>
+    <ReportItems>
+      <Tablix Name="List1">
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>8in</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>8.125in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Rectangle Name="List1_Contents">
+                      <ReportItems>
+                        <Textbox Name="textbox1">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=day(Fields!dateupdated.Value) &amp; "-" &amp; monthname(month(Fields!dateupdated.Value)) &amp; "-" &amp; year(Fields!dateupdated.Value)</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>textbox1</rd:DefaultName>
+                          <Top>1.625in</Top>
+                          <Left>0.125in</Left>
+                          <Height>0.25in</Height>
+                          <Width>5.375in</Width>
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <Textbox Name="textbox2">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>="Att: " &amp; ucase(fields!FirstName.Value &amp; " " &amp; Fields!LastName.Value )</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>textbox2</rd:DefaultName>
+                          <Top>2.125in</Top>
+                          <Left>0.125in</Left>
+                          <Height>0.25in</Height>
+                          <Width>7.375in</Width>
+                          <ZIndex>1</ZIndex>
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <Textbox Name="textbox3">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>I have pleasure in informing you that you have been accepted on the </Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Value>=Fields!Program.Value</Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Value> programme beginning </Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Value>=monthname(month(fields!StartDate.Value)) &amp; "-" &amp; year(fields!StartDate.Value) &amp; " to " &amp; monthname(month(fields!EndDate.Value)) &amp; "-" &amp; year(fields!EndDate.Value)</Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Value> .</Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>If you accept this offer, please sign and return the acceptance slip to :</Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>="The Registrar " + System.Environment .NewLine + "Trust Academy" + System.Environment .NewLine + "P O Box CY 2201" + System.Environment .NewLine + "Causeway" + System.Environment .NewLine + "Harare"</Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Value xml:space="preserve"> </Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Regisration will take place until </Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Value>=formatdatetime(Fields!RegEndDate.Value,dateformat.LongDate)</Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Value> at Trust Academy , Jubilee 200 Centre , from 0900hrs to 1730hrs.Registration  involves you paying the requisite fees and signing the registration contract form before obtaining a student identity card for the year.Acquisition of a student card implies that the registration process has been satisfactorily completed.</Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Classes commence on </Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Value>= FormatDateTime(Fields!ClassCommenceDate.Value,dateformat.LongDate)</Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Value> with online classes then blended with face to face lecturers later.The deadline for registration is </Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Value>=FormatDateTime(dateadd(dateinterval.WeekOfYear,2,Fields!ClassCommenceDate.Value),dateformat.LongDate)</Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Value> which is two weeks after commencement of the semester.</Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>You are required to attend at least </Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Value>=fields!MinClassAttendance.Value &amp; " %"</Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Value> of your lecturers and submit all continous assessment and in class tests to qualify for the end of semester examinations ,failure of which you will be automatically denied taking the examinations.</Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Pay the Academic and Registration fees stated below into the following bank account and send the proof of payment to admissions@trustacademy.co.zw.
+Account Name: Trust Academy
+Account Number(s):
+RTGS: 9140001532277
+USD:   9140001016031
+RAND: 9140001015922
+Branch:         Samora Machel Ave
+Bank:             STANBIC
+Reference:  Reg fees</Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>1.Academic fees (face to face) - </Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Value>="$" &amp; formatnumber(Fields!AcademicFees.Value,2) &amp; " PER " &amp; fields!Per.Value</Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Value> inclusive of Examination fees.</Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>2.Academic fees (online) - </Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Value>="$" &amp; formatnumber(Fields!OnlineAcademicFees.Value,2) &amp; " PER " &amp; fields!OnlinePer.Value</Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Value> inclusive of Examination fees.</Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>3.Registration fees - </Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Value>="$" &amp; formatnumber(fields!RegFees.Value,2)</Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>="NB. Admittance to the " &amp; fields!Program.Value &amp; " programme will be determined by the satisfactory payment of fees and completeion of registration form ."</Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>I would like to note that this offer is made without predudice to the rights which Trust Academy may have to withdraw or cancel in the event of you or Trust Academy unable to meet the conditions of the offer.</Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Congratulations on being accepted to the programme .I hope studies will be enjoyable and successful.</Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Yours faithfully </Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>For Trust Academy .</Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>= "P. Chamanga " &amp; system.Environment .NewLine &amp; "Registrar"</Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Acceptance Slip </Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <TextDecoration>Underline</TextDecoration>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>I............................................................................... I. D Number ........................................</Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Do hereby accept the offer,terms and conditions outlined in the offer letter.</Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>...................................................               ...............................................................</Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value xml:space="preserve">              </Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Value> Signed                                                                             Date</Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Value xml:space="preserve"> </Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>textbox3</rd:DefaultName>
+                          <Top>3.90278in</Top>
+                          <Left>0.125in</Left>
+                          <Height>2.44792in</Height>
+                          <Width>7.75in</Width>
+                          <ZIndex>2</ZIndex>
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <Textbox Name="textbox4">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=fields!Address1.value</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>textbox4</rd:DefaultName>
+                          <Top>2.375in</Top>
+                          <Left>0.125in</Left>
+                          <Height>0.25in</Height>
+                          <Width>4.25in</Width>
+                          <ZIndex>3</ZIndex>
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <Textbox Name="textbox5">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=fields!Address2.Value</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <Top>2.66667in</Top>
+                          <Left>0.125in</Left>
+                          <Height>0.25in</Height>
+                          <Width>4.25in</Width>
+                          <ZIndex>4</ZIndex>
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <Textbox Name="textbox6">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=fields!Address3.Value</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <Top>2.95833in</Top>
+                          <Left>0.125in</Left>
+                          <Height>0.25in</Height>
+                          <Width>4.25in</Width>
+                          <ZIndex>5</ZIndex>
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <Textbox Name="textbox7">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>="Dear Student"</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>textbox7</rd:DefaultName>
+                          <Top>3.23611in</Top>
+                          <Left>0.125in</Left>
+                          <Height>0.25in</Height>
+                          <Width>2.375in</Width>
+                          <ZIndex>6</ZIndex>
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <Textbox Name="textbox8">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>="RE: ADMISSION TO THE  "&amp; ucase(FIELDS!Intake.Value &amp; " " &amp; fields!Class.Value &amp; " INTAKE  FOR THE " &amp; fields!Description.Value)</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Value>= iif(fields!collaborationInstitution.Value="",""," OFFEREED IN COLLABORATION WITH " &amp; ucase(FIELDS!collaborationInstitution.Value) )</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Value>=" SEMESTER : " &amp; SWITCH (trim(fields!Sem.Value)="1","ONE",trim(fields!Sem.Value)="2","TWO",trim(fields!Sem.Value)="3","THREE",trim(fields!Sem.Value)="4","FOUR")</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>textbox8</rd:DefaultName>
+                          <Top>3.51389in</Top>
+                          <Left>0.125in</Left>
+                          <Height>0.25in</Height>
+                          <Width>7.625in</Width>
+                          <ZIndex>7</ZIndex>
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </ReportItems>
+                      <KeepTogether>true</KeepTogether>
+                      <Style />
+                    </Rectangle>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember />
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <Group Name="list1_StudentID">
+                <PageBreak>
+                  <BreakLocation>Between</BreakLocation>
+                </PageBreak>
+              </Group>
+              <DataElementOutput>Output</DataElementOutput>
+              <KeepTogether>true</KeepTogether>
+            </TablixMember>
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <DataSetName>OfferLetter</DataSetName>
+        <PageBreak>
+          <BreakLocation>End</BreakLocation>
+        </PageBreak>
+        <Height>8.125in</Height>
+        <Width>8in</Width>
+        <Style />
+      </Tablix>
+    </ReportItems>
+    <Height>8.125in</Height>
+    <Style />
+  </Body>
+  <Width>8in</Width>
+  <Page>
+    <LeftMargin>0.1in</LeftMargin>
+    <RightMargin>0.1in</RightMargin>
+    <TopMargin>1in</TopMargin>
+    <BottomMargin>1in</BottomMargin>
+    <Style />
+  </Page>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="soccerConnectionString">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString>Data Source=(local);Initial Catalog=CIRSM;User ID=sa;Password=botai</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>7fd28b46-6ee1-46e9-b91d-092df319e373</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="OfferLetter">
+      <Query>
+        <DataSourceName>soccerConnectionString</DataSourceName>
+        <CommandText>SELECT        enrollment.StudentID, enrollment.Gender, enrollment.Year, enrollment.Semester, enrollment.[Date Joined], enrollment.Session, enrollment.Intake, @date1as AS Date1, @date2 AS Date2, 
+                         StudentPersonalDetails.StudentName, StudentPersonalDetails.StudentSurname, enrollment.Status, forms.Description, enrollment.Program, @gen AS SelGender, StudentPersonalDetails.NationalID, 
+                         StudentPersonalDetails.[Residential Adress], StudentPersonalDetails.[Contact Number], StudentPersonalDetails.Address2, StudentPersonalDetails.Address3, StudentPersonalDetails.DateOfBirth, 
+                         enrollment.Date_Enrolled, StudentPersonalDetails.AccountNumber, schoolinfo.Name, schoolinfo.Web, schoolinfo.Address, schoolinfo.Logo, StudentPersonalDetails.Religion, 
+                         StudentPersonalDetails.EmailAddress, StudentPersonalDetails.AccountName, StudentPersonalDetails.BankNumber, StudentPersonalDetails.BankName, StudentPersonalDetails.BankBranch, 
+                         StudentPersonalDetails.Employer, StudentPersonalDetails.Designation, StudentPersonalDetails.EmployerContact, StudentPersonalDetails.ExamCenter, StudentPersonalDetails.Province, 
+                         StudentPersonalDetails.EmployerAddress, StudentPersonalDetails.Marketor, ExamCenters.CenterName, StudentPersonalDetails.StudentMiddleName
+FROM            enrollment INNER JOIN
+                         StudentPersonalDetails ON enrollment.StudentID = StudentPersonalDetails.StudentID INNER JOIN
+                         forms ON StudentPersonalDetails.Program = forms.Forms FULL OUTER JOIN
+                         ExamCenters ON StudentPersonalDetails.ExamCenter = ExamCenters.CenterNumber CROSS JOIN
+                         schoolinfo
+WHERE        (enrollment.[Date Joined] = @enrol) AND (enrollment.Year BETWEEN @Year AND @year2) AND (enrollment.Status = N'Available' OR
+                         enrollment.Status = N'Completed') AND (enrollment.Program = @prog)</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <Fields>
+        <Field Name="Email">
+          <DataField>Email</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FirstName">
+          <DataField>FirstName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="LastName">
+          <DataField>LastName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DateSubmitted">
+          <DataField>DateSubmitted</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="AppReference">
+          <DataField>AppReference</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Program">
+          <DataField>Program</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Intake">
+          <DataField>Intake</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Class">
+          <DataField>Class</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Session">
+          <DataField>Session</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="AppStatus">
+          <DataField>AppStatus</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="comment">
+          <DataField>comment</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="gender">
+          <DataField>gender</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="dob">
+          <DataField>dob</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="Address1">
+          <DataField>Address1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Address2">
+          <DataField>Address2</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Address3">
+          <DataField>Address3</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Contact">
+          <DataField>Contact</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="School">
+          <DataField>School</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Occupation">
+          <DataField>Occupation</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="WorkPhone">
+          <DataField>WorkPhone</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="workAddress">
+          <DataField>workAddress</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="updatedby">
+          <DataField>updatedby</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="dateupdated">
+          <DataField>dateupdated</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="RegFees">
+          <DataField>RegFees</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="ClassCommenceDate">
+          <DataField>ClassCommenceDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="EndDate">
+          <DataField>EndDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="StartDate">
+          <DataField>StartDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="EntryType">
+          <DataField>EntryType</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Level">
+          <DataField>Level</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Sem">
+          <DataField>Sem</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Description">
+          <DataField>Description</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="AcademicFees">
+          <DataField>AcademicFees</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Per">
+          <DataField>Per</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="MinClassAttendance">
+          <DataField>MinClassAttendance</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="RegEndDate">
+          <DataField>RegEndDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="collaborationInstitution">
+          <DataField>collaborationInstitution</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="OnlineAcademicFees">
+          <DataField>OnlineAcademicFees</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="OnlinePer">
+          <DataField>OnlinePer</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>dsStudApp</rd:DataSetName>
+        <rd:SchemaPath>F:\TrustPortal_VS2017\WebApplication2\App_Data\dsStudApp.xsd</rd:SchemaPath>
+        <rd:TableName>StudentApplication</rd:TableName>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+        <rd:TableAdapterName>StudentApplicationTableAdapter</rd:TableAdapterName>
+      </rd:DataSetInfo>
+    </DataSet>
+  </DataSets>
+  <EmbeddedImages>
+    <EmbeddedImage Name="signature2">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>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</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <Language>en-US</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>17c6ee83-782c-4f7f-8ef1-d3b01ba967c8</rd:ReportID>
+</Report>

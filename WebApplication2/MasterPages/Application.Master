@@ -1,0 +1,107 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Application.master.vb" Inherits="TrustAcademyPortal.Application" %>
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Untitled Page</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="/Styles/Styles.css" rel="stylesheet" />
+</head>
+<body>
+<form id="form1" runat="server"   >
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+                </asp:ScriptManager>
+    <div style =" display:flex;flex-flow:column;flex-wrap:wrap" >
+       
+              
+                   
+                  
+                             <div>
+                           <asp:Image 
+                        ID="Image5" runat="server" 
+                        ImageUrl="~/Images/TRUST-ACADEMY3-e1429549503520.png" style="margin-left: 0px" 
+                      />
+                       </div>
+ 
+                     
+ 
+                       
+             
+                    
+                    
+   <asp:Panel runat="server">
+                                         <asp:Label ALIGN = "center" 
+                        ID = "Welcome" runat="server" Text="Label" Font-Bold="True" 
+                        Font-Italic="True" ForeColor="Black" BackColor="White" style="float:right"></asp:Label>
+                                  </asp:Panel>
+                                      </div>
+                                      <div style="float:right">
+                                             <asp:Panel runat="server">
+                                 <asp:HyperLink ID="hlChangePass" runat="server" 
+                                    NavigateUrl="~/Admin/ChangePasswordOnlineApplication.aspx">Change Password</asp:HyperLink>
+                                  </asp:Panel>
+                                      </div>
+                         
+       
+          
+                <div>
+                        <asp:Label 
+                        ID="Label1" runat="server" Text="ONLINE APPLICATION" Font-Bold="True" 
+                        Font-Names="Arial Black" Font-Size="Larger" ForeColor="Black"></asp:Label>
+                </div>
+           
+       
+         
+
+         
+         
+
+        <div style="border-bottom:solid;border-top:solid;border-top-color:black ;border-bottom-color:black;border-bottom-right-radius:10px;border-width:thin;background-color:firebrick">
+            
+                     <asp:Button ID="Button1" runat="server" Text="Login"  CssClass ="LoginStatus" style="float:right"  CausesValidation="False" UseSubmitBehavior="false" />      
+                 <asp:Hyperlink ID="Button2" runat="server" Text="PortalHome"  CssClass ="MenuLink" NavigateUrl="~/Login.aspx" />  
+                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Student/OnlineApplication/ApplicationForm.aspx" 
+                        Visible="False"  CssClass ="MenuLink"
+                                    >NewApplication</asp:HyperLink>
+                    <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Student/OnlineApplication/ApplicationStatus.aspx" 
+                        CssClass ="MenuLink" Visible="False" >MyApplicationStatus</asp:HyperLink>
+                </div>
+            
+  <div style="padding-top:10px;">
+      
+                    <div style="width:100%"  >
+                        
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+           
+           
+        
+        </asp:ContentPlaceHolder>
+                         
+                        </div>
+             
+      
+    </div>
+        <div>
+             <table width ="100%">
+                                    <tr>
+                                        <td width ="50%" align ="right">
+                                               <asp:Label ID="Label2" runat="server" Text=""></asp:Label>
+                                        </td>
+                                        <td width = "50%" align ="left">
+
+                                 <asp:Image ID="Image2" runat="server" Height="28px" ImageUrl="~/Images/Imela.png" Width="138px" />  
+
+                                        </td>
+                                    </tr>
+                                </table>
+        </div>
+    
+    </form>
+</body>
+</html>
+

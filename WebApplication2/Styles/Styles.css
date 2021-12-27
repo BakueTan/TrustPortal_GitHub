@@ -1,0 +1,394 @@
+.divMain {
+    width:100%;
+    background-color:white;
+    margin:auto;
+    display :flex ;
+    flex-direction:column;
+}
+
+
+
+
+.appformdiv{
+        
+         display:flex;
+         flex-direction:column;
+         flex-wrap:wrap;
+          padding-bottom:5px;
+          /*padding-left:15px;*/
+          padding-right:5px;
+         
+       
+       
+     }
+.HeaderWidth {
+    width :100%;
+    margin:auto;
+}
+
+.appformdivrow {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-bottom: 5px;
+    /*padding-left:15px;*/
+    padding-right: 5px;
+}
+.handle {
+    width: 20px;
+    height: 20px;
+    background-color: black;
+}
+
+.resizable {
+    padding: 0px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: red;
+    cursor: se-resize;
+}
+
+.appformdivSearch {
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding-bottom: 5px;
+    /*padding-left:15px;*/
+    padding-right: 5px;
+}
+
+.divMenu {
+    border-bottom:solid;
+    border-top:solid;
+    border-top-color:black ;
+    border-bottom-color:black;
+    border-width:thin;
+    background-color:firebrick
+}
+.Inputdiv {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding-bottom: 5px;
+    width:100%
+    /*margin:auto;
+    width:50%;*/
+    /*padding-left:15px;*/
+}
+
+.InputdivLogin {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    /*padding-bottom: 0.5em;*/
+    width: 100%;
+    height: 4em;
+    /*margin:auto;
+    width:50%;*/
+    /*padding-left:15px;*/
+}
+.inputtext {
+    height: 2.5em;
+    width: 100%;
+    font:2em;
+    border: none;
+    border-bottom: solid;
+    background-color: aliceblue;
+    border-width: thin;
+    border-bottom-color: firebrick;
+
+}
+
+.inputtextReadOnly {
+    height: 2.5em;
+    width: 100%;
+    font: x-large;
+    border: none;
+    border-bottom: solid;
+    background-color: lightgrey;
+    border-width: thin;
+    border-bottom-color: firebrick;
+    color:black;
+   
+}
+
+.inputtextLogin {
+    height: 30px;
+    width: 100%;
+    font: large;
+    /*border-radius: 10px;*/
+    border: none;
+    border-bottom: solid;
+    background-color: #f2f2f2;
+    border-width :thin;
+    border-bottom-color : firebrick ;
+}
+
+
+.LoginButton1 {
+    background-color: firebrick;
+    color:white;
+    height:2.5em;
+    border-radius:10px;
+}
+
+.LoginButton1,.RegisterButton{
+    width:100%;
+
+}
+
+.LoginButton1:hover{
+    background-color: firebrick;
+        Color:white;
+    border:none;
+
+}
+
+    .RegisterButton:hover {
+        background-color: firebrick;
+        Color: white;
+        border: none;
+
+    }
+.ddlinput {
+    height: 40px;
+    width: 100%;
+    font:x-large;
+    border: none;
+    border-bottom: solid;
+    border-width: thin;
+    border-bottom-color: firebrick;
+    font: large;
+    background-color: aliceblue;
+}
+.ddlSearch {
+    height: 40px;
+    width: 100%;
+    font: x-large;
+    border: none;
+    border-bottom: solid;
+    border-width: thin;
+    border-bottom-color: firebrick;
+    font: large;
+    background-color: aliceblue;
+}
+
+.ddlinputLogin {
+    height: 30px;
+    width: 25%;
+    /*border-radius: 10px;*/
+    border: none;
+    border-bottom: solid;
+    border-width:thin;
+    border-bottom-color: firebrick;
+    font: large;
+    background-color :aliceblue;
+}
+.MenuLink2 {
+    border: solid;
+    border-top-right-radius: 25%;
+    border-top-left-radius: 25%;
+    display: inline-block;
+    border-width: thin;
+    padding-left: 10px;
+    padding-bottom: 2px;
+    background-color: firebrick;
+    color: white;
+}
+.LoginStatus {
+    display: inline-block;
+    font-style: normal;
+    text-decoration: none;
+    color: white;
+    padding-bottom: 3px;
+    padding-top: 3px;
+    padding-left: 10px;
+    border: none;
+  float:right;
+    background-color:green;
+ 
+}
+
+
+.MenuLink {
+    display: inline-flex;
+    font-style:normal;
+    text-decoration :none;
+    color: white;
+    padding-bottom:3px ;
+    padding-top:3px;
+   padding-left : 10px;
+    border:none;
+ flex-wrap:wrap;   
+ 
+}
+
+.MenuLinkHighlighted {
+    display: inline-flex;
+    font-style: normal;
+    text-decoration: none;
+    color: firebrick;
+    padding-bottom: 3px;
+    padding-top: 3px;
+    padding-left: 10px;
+    border: none;
+    flex-wrap: wrap;
+     border-color: black;
+    background-color: white;
+}
+
+.btn {
+   /*' display: inline-block;*/
+    font-style: normal;
+    text-decoration: none;
+    color: white;
+    padding-bottom: 3px;
+    padding-top: 3px;
+    /*padding-left: 10px;*/
+    border: none;
+    background-color: green;
+    width:auto
+       
+}
+
+.btnCancel {
+    /*' display: inline-block;*/
+    font-style: normal;
+    text-decoration: none;
+    color: white;
+    padding-bottom: 3px;
+    padding-top: 3px;
+    /*padding-left: 10px;*/
+    border: none;
+    /*background-color:*/
+    width: auto
+}
+
+    .LoginStatus:hover, .btn:hover {
+        background-color: darkgreen;
+    }
+    /*.MenuLink:link {
+        color: black;
+    }*/
+
+
+    .MenuLink:hover,.btnCancel:hover {
+        color: white;
+        border-color: white;
+        background-color:black;
+    }
+
+.modalBackground {
+    background-color: Gray;
+    filter: alpha(opacity=70);
+    opacity: 0.7;
+}
+
+.modalPopup {
+    background-color: white;
+    width:200px;
+ 
+}
+
+.subjectsPopUp {
+    width: 300px;
+    height: 300px;
+    background:gray;
+}
+
+.modal {
+    position: fixed;
+    z-index: 999;
+    height: 100%;
+    width: 100%;
+    top:0;
+    background-color:lightgray;
+    filter: alpha(opacity=60);
+    opacity: 0.6;
+    margin:auto;
+    /*-moz-opacity: 0.8;*/
+}
+
+.center {
+    z-index: 1000;
+    margin: 300px auto;
+    padding: 10px;
+    width: 130px;
+    background-color: White;
+    border-radius: 10px;
+    filter: alpha(opacity=100);
+    opacity: 1;
+    /*-moz-opacity: 1;*/
+}
+
+    .center img {
+        height: 128px;
+        width: 128px;
+    }
+div.SideBarWidth {
+    width: 15%
+}
+
+
+.divMainLogin {
+    background-color: white;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+
+@media only screen and (min-width: 768px) {
+
+    div.divMain {
+        width: 50%;
+    }
+
+
+    div.divMainLogin {
+        width: 50%;
+        margin: auto
+    }
+
+
+
+   div .SideBarWidth {
+        width: 20%;
+    }
+   div .inputtext {
+      
+        width: 100%;
+ 
+    }
+    div.inputtextLogin {
+        width: 50%;
+    }
+
+    div.LoginButton1 {
+      
+        width: 50%
+    }
+    div.RegisterButton {
+        width: 50%
+    }
+    div.Inputdiv
+    {
+        width:100%
+    }
+    div.ddlinput
+    {
+        width:100%
+    }
+
+    div.HeaderWidth
+    {
+        width:50%
+    }
+
+    div.inputtextReadOnly
+    {
+        width:90%
+    }
+
+  
+}

@@ -1,0 +1,69 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="LectMaster.Master.vb" Inherits="TrustAcademyPortal.StudentMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>Untitled Page</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+        .style2
+        {
+            width: 104px;
+        }
+        .style3
+        {
+            width: 104px;
+            height: 41px;
+        }
+        .style4
+        {
+            height: 41px;
+        }
+        .style5
+        {
+            width: 104px;
+            height: 455px;
+        }
+        .style6
+        {
+            height: 455px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        
+        <table class="style1">
+            <tr>
+                <td class="style2">
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td class="style5">
+                </td>
+                <td class="style6" style="vertical-align: top">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </td>
+            </tr>
+            <tr>
+                <td class="style3">
+                </td>
+                <td class="style4">
+                </td>
+            </tr>
+        </table>
+        
+    </div>
+    </form>
+</body>
+</html>
