@@ -106,20 +106,15 @@
            <div class="appformdiv">
                      <asp:Button ID="btnConfirmPopUp" style="display:none" runat ="server" Text="Cancel" />
                      <ajaxtoolkit:modalpopupextender ID="btnConfirmPopUp_ModalPopupExtender" runat="server" BehaviorID="btnConfirmPopUp_ModalPopupExtender" TargetControlID="btnConfirmPopUp"
-                         PopupControlID="ResultPopup"    BackgroundCssClass="modalBackground" PopupDragHandleControlID="pnlResultHeader">
+                         PopupControlID="ResultPopup"    BackgroundCssClass="modalBackground">
                      </ajaxtoolkit:modalpopupextender>
                 </div>
-            <asp:Panel runat="server" ID="ResultPopup" Style=" display:normal;width:200px;" CssClass ="modalPopup"  >
-                   <asp:Panel ID ="pnlResultHeader" runat ="server" style="width:100%;background-color:black">
-                     <asp:Label ID ="lblheader" Text="Online Application"  style="width:100%;text-align:center;font-weight:bold;color:white" runat ="server"></asp:Label>
-                 </asp:Panel>
+            <asp:Panel runat="server" ID="ResultPopup" Style=" display:none;width:200px;border:solid" CssClass ="modalPopup"  >
        <asp:Label ID ="lblAppSubmitResult" runat ="server" ></asp:Label>
                 <br />
-       <div style="display:flex;background-color:lightgray;width:100%;padding-top:0.25em;padding-bottom:0.25em;justify-content:flex-end">
-            <asp:Button runat="server" ID="hideModalPopupViaServer" Text="Ok" style="width:25%;"
+       
+            <asp:Button runat="server" ID="hideModalPopupViaServer" Text="Ok"
                 OnClick="hideModalPopupViaServer_Click" CausesValidation="False" />
-       </div>
-           
       
     </asp:Panel>
                      </ContentTemplate>

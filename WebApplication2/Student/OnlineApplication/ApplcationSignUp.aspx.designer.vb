@@ -149,6 +149,24 @@ Partial Public Class ApplcationSignUp
     Protected WithEvents pnlCreateUserResult As Global.System.Web.UI.WebControls.Panel
     
     '''<summary>
+    '''pnlResultHeader control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents pnlResultHeader As Global.System.Web.UI.WebControls.Panel
+    
+    '''<summary>
+    '''lblheader control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblheader As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
     '''lbCreateUserResults control.
     '''</summary>
     '''<remarks>

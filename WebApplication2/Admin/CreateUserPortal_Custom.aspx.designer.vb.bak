@@ -12,7 +12,7 @@ Option Explicit On
 
 
 Partial Public Class CreateUser_Custom
-    
+
     '''<summary>
     '''progretrieve control.
     '''</summary>
@@ -21,7 +21,7 @@ Partial Public Class CreateUser_Custom
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents progretrieve As Global.System.Web.UI.UpdateProgress
-    
+
     '''<summary>
     '''UserName control.
     '''</summary>
@@ -30,7 +30,7 @@ Partial Public Class CreateUser_Custom
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents UserName As Global.System.Web.UI.WebControls.TextBox
-    
+
     '''<summary>
     '''UserNameRequired control.
     '''</summary>
@@ -39,7 +39,7 @@ Partial Public Class CreateUser_Custom
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents UserNameRequired As Global.System.Web.UI.WebControls.RequiredFieldValidator
-    
+
     '''<summary>
     '''Password control.
     '''</summary>
@@ -48,7 +48,7 @@ Partial Public Class CreateUser_Custom
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Password As Global.System.Web.UI.WebControls.TextBox
-    
+
     '''<summary>
     '''PasswordRequired control.
     '''</summary>
@@ -57,7 +57,7 @@ Partial Public Class CreateUser_Custom
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents PasswordRequired As Global.System.Web.UI.WebControls.RequiredFieldValidator
-    
+
     '''<summary>
     '''ConfirmPassword control.
     '''</summary>
@@ -66,7 +66,7 @@ Partial Public Class CreateUser_Custom
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ConfirmPassword As Global.System.Web.UI.WebControls.TextBox
-    
+
     '''<summary>
     '''ConfirmPasswordRequired control.
     '''</summary>
@@ -75,7 +75,7 @@ Partial Public Class CreateUser_Custom
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ConfirmPasswordRequired As Global.System.Web.UI.WebControls.RequiredFieldValidator
-    
+
     '''<summary>
     '''Email control.
     '''</summary>
@@ -84,7 +84,7 @@ Partial Public Class CreateUser_Custom
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Email As Global.System.Web.UI.WebControls.TextBox
-    
+
     '''<summary>
     '''EmailRequired control.
     '''</summary>
@@ -93,7 +93,7 @@ Partial Public Class CreateUser_Custom
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents EmailRequired As Global.System.Web.UI.WebControls.RequiredFieldValidator
-    
+
     '''<summary>
     '''Question control.
     '''</summary>
@@ -102,7 +102,7 @@ Partial Public Class CreateUser_Custom
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Question As Global.System.Web.UI.WebControls.TextBox
-    
+
     '''<summary>
     '''QuestionRequired control.
     '''</summary>
@@ -111,7 +111,7 @@ Partial Public Class CreateUser_Custom
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents QuestionRequired As Global.System.Web.UI.WebControls.RequiredFieldValidator
-    
+
     '''<summary>
     '''Answer control.
     '''</summary>
@@ -120,7 +120,7 @@ Partial Public Class CreateUser_Custom
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Answer As Global.System.Web.UI.WebControls.TextBox
-    
+
     '''<summary>
     '''AnswerRequired control.
     '''</summary>
@@ -129,7 +129,7 @@ Partial Public Class CreateUser_Custom
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents AnswerRequired As Global.System.Web.UI.WebControls.RequiredFieldValidator
-    
+
     '''<summary>
     '''pnlSave control.
     '''</summary>
@@ -138,7 +138,7 @@ Partial Public Class CreateUser_Custom
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents pnlSave As Global.System.Web.UI.UpdatePanel
-    
+
     '''<summary>
     '''btnCreateUser control.
     '''</summary>
@@ -147,7 +147,7 @@ Partial Public Class CreateUser_Custom
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btnCreateUser As Global.System.Web.UI.WebControls.Button
-    
+
     '''<summary>
     '''PasswordCompare control.
     '''</summary>
@@ -156,7 +156,7 @@ Partial Public Class CreateUser_Custom
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents PasswordCompare As Global.System.Web.UI.WebControls.CompareValidator
-    
+
     '''<summary>
     '''Button13 control.
     '''</summary>
@@ -165,7 +165,7 @@ Partial Public Class CreateUser_Custom
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Button13 As Global.System.Web.UI.WebControls.Button
-    
+
     '''<summary>
     '''ModalPopupExtender_Creater control.
     '''</summary>
@@ -174,7 +174,7 @@ Partial Public Class CreateUser_Custom
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ModalPopupExtender_Creater As Global.AjaxControlToolkit.ModalPopupExtender
-    
+
     '''<summary>
     '''pnlCreateUserResultPopup control.
     '''</summary>
@@ -183,25 +183,7 @@ Partial Public Class CreateUser_Custom
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents pnlCreateUserResultPopup As Global.System.Web.UI.WebControls.Panel
-    
-    '''<summary>
-    '''pnlResultHeader control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents pnlResultHeader As Global.System.Web.UI.WebControls.Panel
-    
-    '''<summary>
-    '''lblheader control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblheader As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''lbCreateUserResults control.
     '''</summary>
@@ -210,7 +192,7 @@ Partial Public Class CreateUser_Custom
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbCreateUserResults As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''hideResultsModalPopupViaServer control.
     '''</summary>
@@ -219,7 +201,7 @@ Partial Public Class CreateUser_Custom
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents hideResultsModalPopupViaServer As Global.System.Web.UI.WebControls.Button
-    
+
     '''<summary>
     '''ErrorMessage control.
     '''</summary>

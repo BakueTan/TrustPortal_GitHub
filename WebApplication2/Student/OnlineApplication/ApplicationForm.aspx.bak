@@ -598,10 +598,10 @@
                      <asp:Label ID ="lblheader" Text="Online Application"  style="width:100%;text-align:center;font-weight:bold;color:white" runat ="server"></asp:Label>
                  </asp:Panel>
        <asp:Label ID ="lblAppSubmitResult" runat ="server" ></asp:Label>
-                <div style="display:flex;background-color:lightgray;width:100%;padding-top:0.25em;padding-bottom:0.25em;justify-content:flex-end;" >
+                <div style="padding-top:1em;width:100%;margin:auto" >
                      
             <asp:Button runat="server" ID="hideModalPopupViaServer" Text="Ok"
-                OnClick="hideModalPopupViaServer_Click" CausesValidation="False"  style="width:25%;"  />
+                OnClick="hideModalPopupViaServer_Click" CausesValidation="False"   />
                 </div>
       
       

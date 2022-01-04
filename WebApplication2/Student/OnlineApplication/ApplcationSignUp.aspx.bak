@@ -70,21 +70,17 @@
                                      <asp:Button ID="Button13" style="display:none" runat ="server" Text="Cancel" />    
 
      <ajaxtoolkit:modalpopupextender ID="ModalPopupExtender_Creater" runat="server" BehaviorID="btnConfirmPopUp_ModalPopupExtender" TargetControlID="Button13"
-                         PopupControlID="pnlCreateUserResult"    BackgroundCssClass="modalBackground" PopupDragHandleControlID="pnlResultHeader">
+                         PopupControlID="pnlCreateUserResult"    BackgroundCssClass="modalBackground_Transparent">
                      </ajaxtoolkit:modalpopupextender>
                 
            
-            <asp:Panel runat="server" ID="pnlCreateUserResult" Style="width:200px;display:normal" CssClass ="modalPopup"   >
-                  <asp:Panel ID ="pnlResultHeader" runat ="server" style="width:100%;background-color:black">
-                     <asp:Label ID ="lblheader" Text="Online Application"  style="width:100%;text-align:center;font-weight:bold;color:white" runat ="server"></asp:Label>
-                 </asp:Panel>
-
+            <asp:Panel runat="server" ID="pnlCreateUserResult" Style="width:200px;border:solid;display:none" CssClass ="modalPopup" BorderStyle="None" ForeColor="White" HorizontalAlign="Center"  >
        <div>
            <asp:Label ID ="lbCreateUserResults" runat ="server" ></asp:Label>
        </div>
              
-          <div style=" display:flex;background-color:lightgray;width:100%;padding-top:0.25em;padding-bottom:0.25em;justify-content:flex-end"  >
-            <asp:Button runat="server" ID="hideResultsModalPopupViaServer" Text="Ok"  CausesValidation="False" style="width:25%;" />
+       <div>
+            <asp:Button runat="server" ID="hideResultsModalPopupViaServer" Text="Ok"  CausesValidation="False" />
        </div>
                   </asp:Panel>
 
