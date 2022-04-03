@@ -14,7 +14,7 @@
     <form id="form1" runat="server"   >
          <asp:ScriptManager ID="ScriptManager1" runat="server">
                 </asp:ScriptManager>
-    <div>
+    <div style =" display:flex;flex-flow:column;flex-wrap:wrap">
 
              <div>
                            <asp:Image 
@@ -31,21 +31,48 @@
                         Font-Names="Arial Black" Font-Size="Larger" ForeColor="Black"></asp:Label>
                 </div>
             
+       
 
-        <div class="divMenu"">
-                    <asp:HyperLink ID="lnkBillingCutOff" runat="server" 
+      
+        <div  class="divMenuBasic">
+        
+              <asp:HyperLink ID="lnkBillingCutOff" runat="server" 
                         NavigateUrl="~/Admin/frmBillingCutOff.aspx" cssclass="MenuLink">ExamsCutOff</asp:HyperLink>
-                    <asp:HyperLink ID="lnkResetPassword" runat="server" 
+          
+     
+               
+              
+                      <asp:HyperLink ID="lnkResetPassword" runat="server" 
                         NavigateUrl="~/Admin/frmUserAdmin.aspx" cssclass="MenuLink"
                         >ResetStudentPassword</asp:HyperLink>
-            <asp:HyperLink ID="lnkApproveApplications" runat="server" 
+                 
+                        
+                  
+                  
+      
+                <asp:HyperLink ID="lnkApproveApplications" runat="server" 
                         NavigateUrl="~/Admin/ViewApplications.aspx" cssclass="MenuLink" 
                         >ViewApplications</asp:HyperLink>
-                   <asp:HyperLink ID="lnkReturningStudent" runat="server" NavigateUrl="~/Student/RegisterSubjects.aspx" CssClass="MenuLink" Visible="False" >Subject Registration</asp:HyperLink>
-                <asp:label ID="lnkLoggeduser" runat="server"   style="float:right"  CausesValidation="False" text ="Logged User"  CssClass ="LoginStatus"/> 
+      
+                
+       
+     
+               <asp:HyperLink ID="lnkReturningStudent" runat="server" NavigateUrl="~/Student/RegisterSubjects.aspx" CssClass="MenuLink" Visible="False" >Subject Registration</asp:HyperLink>
+   
+         
+              
+   
+           <asp:label ID="lnkLoggeduser" runat="server"   style="float:right"  CausesValidation="False" text ="Logged User"  CssClass ="LoginStatus"/> 
+    
+                
+       
+              
              
    
-                           <ajaxToolkit:RoundedCornersExtender ID="lnkLoggeduser_RoundedCornersExtender" runat="server" BehaviorID="lnkLoggeduser_RoundedCornersExtender" TargetControlID="lnkLoggeduser" />
+                       
+            
+   </div>
+            <ajaxToolkit:RoundedCornersExtender ID="lnkLoggeduser_RoundedCornersExtender" runat="server" BehaviorID="lnkLoggeduser_RoundedCornersExtender" TargetControlID="lnkLoggeduser" />
              
    
             <ajaxToolkit:HoverMenuExtender ID="lnkLogout_HoverMenuExtender" runat="server" BehaviorID="lnkLogout_HoverMenuExtender" DynamicServicePath="" TargetControlID="lnkLoggedUser" PopupControlID="PopUpMenuLogin" PopupPosition="Bottom" OffsetX="-20">
@@ -60,9 +87,7 @@
                                     </div>
                                 </div>
                             </asp:Panel>
-            
-   </div>
-            
+           
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
        
         </asp:ContentPlaceHolder>

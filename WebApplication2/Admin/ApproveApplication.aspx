@@ -3,7 +3,8 @@
 <%--<%@ Register assembly="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" namespace="Microsoft.Reporting.WebForms" tagprefix="rsweb" %>--%>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">  
-          <asp:UpdateProgress runat ="server" ID ="offerprogress" AssociatedUpdatePanelID ="pnlApproveApp">
+        <div class="divMainStandard">
+    <asp:UpdateProgress runat ="server" ID ="offerprogress" AssociatedUpdatePanelID ="pnlApproveApp">
       <ProgressTemplate>
                  <div class ="modal">
                          <div class="center">
@@ -16,7 +17,7 @@
                    </div>
       </ProgressTemplate>
   </asp:UpdateProgress>
-        <div class ="divMain">
+ 
             <div class="appformdiv">
                     <h1 style ="width :50%;margin:auto;">APPLICATION</h1>
             </div>
@@ -71,7 +72,7 @@
           
              
             </div>
-       
+        </div>
              
         
             <div class="appformdiv">
@@ -412,15 +413,17 @@
 
                                         
             
-               </div> 
+           
              <div class="appformdiv">
             <asp:Label ID ="Label20" runat ="server" Text ="Date Applied" float ="left" Font-Size="XX-Small"></asp:Label>
+                 
                
                 <div >
                     
                 <asp:TextBox ID="txtDateApplicationSubmitted" runat="server" CssClass="inputtextReadOnly" placeholder="Date Application Submitted not Captured" ReadOnly="true"></asp:TextBox>
        
                 </div>
+                 </div>
                <div class="appformdiv">
           
                  <asp:Label ID ="Label21" runat ="server" Text ="Date Decision Made" float ="left" Font-Size="XX-Small"></asp:Label>

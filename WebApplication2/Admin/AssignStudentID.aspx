@@ -21,7 +21,7 @@
                                                 
            </asp:UpdateProgress>
                     </div>
-     <div class ="divMain">
+     <div class ="divMainStandard">
             <div class="appformdiv">
                     <h1 style ="width :50%;margin:auto;">ASSIGN STUDENTID</h1>
             </div>

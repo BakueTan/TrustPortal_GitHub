@@ -7,7 +7,7 @@
            
 
 
-       <div class ="divMain">
+       <div class ="divMainStandard">
              
                    <div class="appformdiv">
                <h1 class="HeaderWidth">APPLICATION FORM</h1>
@@ -353,14 +353,8 @@
   
                 <div >
                      <asp:dropdownlist ID="dpKnowhow" runat="server" CssClass="ddlinput">
-                          <asp:ListItem Value="-1">How did you hear about trust?</asp:ListItem>
-                 <asp:ListItem>Star FM</asp:ListItem>
-                 <asp:ListItem>The Herald</asp:ListItem>
-                 <asp:ListItem>Daily News</asp:ListItem>
-                 <asp:ListItem>Sunday Mail</asp:ListItem>
-                 <asp:ListItem>HMetro</asp:ListItem>
-                 <asp:ListItem>Friend</asp:ListItem>
-                 <asp:ListItem>Others</asp:ListItem>
+                        
+                 
              </asp:dropdownlist>
                          <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="dpKnowHow" ErrorMessage="Field Required" SetFocusOnError="True" InitialValue="-1"></asp:RequiredFieldValidator>
                 </div>

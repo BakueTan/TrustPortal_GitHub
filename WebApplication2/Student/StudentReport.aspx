@@ -16,7 +16,7 @@
         ShowBackButton="False" ShowCredentialPrompts="False" ShowFindControls="False" 
         ShowPageNavigationControls="False" ShowParameterPrompts="False" 
         ShowPromptAreaButton="False" ShowRefreshButton="False" 
-        ShowZoomControl="False" ShowExportControls="False">
+        ShowZoomControl="False" ShowExportControls="False" ZoomMode="PageWidth">
         <LocalReport ReportPath="Reports\rptTrans2.rdlc">
          <DataSources>
                 <rsweb:ReportDataSource DataSourceId="SqlDataSource1" 

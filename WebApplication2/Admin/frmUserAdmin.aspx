@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/MasterPages/Admin.Master" CodeBehind="frmUserAdmin.aspx.vb" Inherits="TrustAcademyPortal.frmUserAdmin" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div>
+    <div class="divMainStandard">
         <div>
             <h1>RESET STUDENT PASSWORD</h1>
         </div>

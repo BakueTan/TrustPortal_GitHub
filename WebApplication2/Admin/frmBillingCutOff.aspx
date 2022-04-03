@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/MasterPages/Admin.Master" CodeBehind="frmBillingCutOff.aspx.vb" Inherits="TrustAcademyPortal.frmBillingCutOff" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-   <div>
+   <div class="divMainStandard">
 
    <div>
        <h1>MAINTAIN EXAMS BILLING CUT OFF</h1>
@@ -13,7 +13,7 @@
            <asp:DropDownList ID="dpCutOffPeriod" runat="server" DataSourceID="dsPAstelPeriods" DataTextField="Description" DataValueField="Period" CssClass="ddlinput">
 </asp:DropDownList>
          
-       </div
+       </div>
        </div>
 
        <div class="appformdiv">

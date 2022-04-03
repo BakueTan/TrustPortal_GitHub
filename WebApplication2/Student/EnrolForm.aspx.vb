@@ -1,4 +1,6 @@
 ﻿Imports System.Data.SqlClient
+Imports Microsoft.Reporting.WebForms
+
 Public Class EnrolForm
     Inherits System.Web.UI.Page
 
@@ -27,11 +29,35 @@ Public Class EnrolForm
         'End If
 
         'cnn.Close()
+
     End Sub
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-     
+
     End Sub
 
+    Protected Sub ReportViewer1_Load(sender As Object, e As EventArgs) Handles ReportViewer1.Load
+        Dim ex As RenderingExtension() = ReportViewer1.LocalReport.ListRenderingExtensions()
 
+
+        Dim exportOption As String = "EXCELOPENXML"
+
+        Dim expopt2 As String = "WORDOPENXML"
+
+
+
+
+
+        Dim extension As RenderingExtension = ReportViewer1.LocalReport.ListRenderingExtensions().ToList().Find(Function(x) x.Name.Contains(exportOption))
+        If extension IsNot Nothing Then
+            Dim fieldInfo As System.Reflection.FieldInfo = extension.GetType().GetField("m_isVisible", System.Reflection.BindingFlags.Instance Or System.Reflection.BindingFlags.NonPublic)
+            fieldInfo.SetValue(extension, False)
+        End If
+
+        extension = ReportViewer1.LocalReport.ListRenderingExtensions().ToList().Find(Function(x) x.Name.Contains(expopt2))
+        If extension IsNot Nothing Then
+            Dim fieldInfo As System.Reflection.FieldInfo = extension.GetType().GetField("m_isVisible", System.Reflection.BindingFlags.Instance Or System.Reflection.BindingFlags.NonPublic)
+            fieldInfo.SetValue(extension, False)
+        End If
+    End Sub
 End Class

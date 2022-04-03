@@ -228,6 +228,7 @@
     <Content Include="Images\SignIn %281%29.png" />
     <Content Include="Images\SignOut.png" />
     <Content Include="Admin\ViewApplications.aspx" />
+    <Content Include="Images\Toogle.png" />
     <Content Include="Images\Upload.png" />
     <Content Include="Images\View.png" />
     <Content Include="Student\EnrolForm.aspx" />

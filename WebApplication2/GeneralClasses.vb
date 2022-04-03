@@ -11,18 +11,32 @@ Public Class CSmtp
 
     Public Sub New()
         Dim sql As String = "select * from smtp "
-        drr = ExecuteReader(sql,, True)
-
-        While drr.Read
-            Server = drr("Server")
-            MailFrom = drr("MailFrom")
-            Port = drr("Port")
-            Password = drr("Password")
 
 
+        Dim cnn As New SqlConnection(ConnectionString)
+
+        Try
+            cnn.Open()
+            Dim cmd As New SqlCommand(sql, cnn)
+
+            drr = cmd.ExecuteReader
+
+            While drr.Read
+                Server = drr("Server")
+                MailFrom = drr("MailFrom")
+                Port = drr("Port")
+                Password = drr("Password")
 
 
-        End While
+
+
+            End While
+        Catch ex As Exception
+        Finally
+            cnn.Close()
+        End Try
+
+
     End Sub
 
 End Class

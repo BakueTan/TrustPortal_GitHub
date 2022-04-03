@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/MasterPages/Admin.Master" CodeBehind="ViewApplications.aspx.vb" Inherits="TrustAcademyPortal.WebForm12" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-      <asp:UpdateProgress runat ="server" ID ="offerprogress" AssociatedUpdatePanelID ="pnlAppSearch">
+     
+    <asp:UpdateProgress runat ="server" ID ="offerprogress" AssociatedUpdatePanelID ="pnlAppSearch">
       <ProgressTemplate>
                  <div class ="modal">
                          <div class="center">

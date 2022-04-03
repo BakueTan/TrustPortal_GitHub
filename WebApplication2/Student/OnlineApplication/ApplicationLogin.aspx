@@ -2,11 +2,15 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <div class="divMain">
+    <div class ="divMainLogin">
+          
+      <div  style=" WIDTH :100%;align-items:center">
+                       <h3 >LOGIN</h3>
+                   </div>
 
 
   <div class ="Inputdiv">
-      <div style="display:inline-flex;width:100%" >
+      <div width:100%" >
            <asp:TextBox ID="TextBox1" runat="server" CssClass="inputtextLogin" placeholder="Email"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBox1" ErrorMessage="E-mail Required"></asp:RequiredFieldValidator>
       </div>
@@ -45,8 +49,11 @@ Don&#39;t have an Account? <asp:HyperLink ID ="lbCreateAccount" Text ="Create Ac
 
     </div>
       
-       
+   
+
+     
             <div style="font-style:italic;color:red;font-size:large;text-decoration:underline;"><h3>IMPORTANT INFORMATION</h3></div>
+            <div style="border-radius:15%;border:solid;border-color:red;border-width:0.5px;background-color:whitesmoke">
          <ul>
             <li>
                 <div style="font-style:normal;color:red;font-size:large">Students should receive emails from "admissions@trustacademy.ac.zw" after each stage of the application process.</div>
@@ -64,7 +71,7 @@ Don&#39;t have an Account? <asp:HyperLink ID ="lbCreateAccount" Text ="Create Ac
          
      
        
-            
+              </div>
          
      
         </div>

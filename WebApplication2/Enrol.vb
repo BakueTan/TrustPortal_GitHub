@@ -111,6 +111,6 @@ Public Class Enrol
     End Property
 
     Public Property Email As String
-
+    Public Property ExamSession As String
     Public Property FullName As String
 End Class

@@ -4,11 +4,11 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">  
   
-                 <div class="divMain">
+                 <div class="divMainLogin">
                              <asp:UpdateProgress ID ="progretrieve" runat ="server" AssociatedUpdatePanelID ="pnlSave"  >
         <ProgressTemplate>
-            <div style="height:100%;width:100%;position:fixed;opacity:0.6;z-index:999;margin:auto;background-color:lightgray;">
-                       <img alt="image" src="../Images/Loader.gif" class="center" style="height: 150px" />
+            <div class="modal">
+                       <img alt="image" src="../Images/Loader.gif"  style="height: 150px" />
                                          Creating User.... 
                   </div>
         </ProgressTemplate>

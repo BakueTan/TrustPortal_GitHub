@@ -8,7 +8,7 @@
         <WizardSteps>
             <asp:CreateUserWizardStep runat="server" >
                 <ContentTemplate>
-                 <div style="display :flex;flex-direction:column;width:50%;margin:auto">
+                 <div class="divMainLogin">
 
            
                       <div class ="appformdiv">

@@ -14,7 +14,7 @@
 
 
     
-    <div class="divMain">
+    <div class="divMainLogin">
        
       <div  style=" WIDTH :100%;align-items:center">
                        <h3 >LOGIN</h3>

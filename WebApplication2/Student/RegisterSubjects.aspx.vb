@@ -20,7 +20,9 @@ Public Class RegisterSubjects
     Private Proceed As Boolean
     Private Student As String
     Private Function getSubdesc(ByVal subjects As String) As String
-        Dim sql As String = "select 'True' as Slct ,'Register' as Register, subjectid ,subject from subjects where subjectid  in ('" & subjects & "')"
+        Dim sql As String = "select 'True' as Slct ,'Register' as Register, s.subjectid as subjectid ,s.subject as Subject,p.Level ,'False' as ChangeReg, 'Re-Write' as Comment from subjects S  " &
+             " inner join subjectprograms p  on p.subject = s.subjectid and p.program = '" & Session("Program") & "' " &
+" where subjectid  in ('" & subjects & "')"
         Return sql
     End Function
 
@@ -96,8 +98,10 @@ Public Class RegisterSubjects
                         '  Session("program") = drr(1)
                         '  Session("level") = drr(0)
 
-                        lbSubjects.Visible = True
+
                         txtProgram.Text = Program
+
+                        Session("Program") = Program
 
                         CurrLevel = drr("CurrentLevel")
                         CurrSemester = drr("CurrentSemester")
@@ -110,6 +114,8 @@ Public Class RegisterSubjects
 
                         txtLvl.Text = CurrLevel
                         txtSem.Text = CurrSemester
+                        Session("Registered") = "False"
+
 
 
                         If drr("HasExams") = "True" Then
@@ -138,18 +144,27 @@ Public Class RegisterSubjects
                                 '  subs = subjects.Split(",")
                                 subjects = Trim(subjects.Replace(",", "','").Replace("& Review", ""))
 
-                                If Not SearchRegistration(Trim(subjects), drr("NxtLvl"), drr("NxtSem")) Then ' 
+                                If Not SearchRegistration(Trim(subjects), drr("NxtLvl"), drr("NxtSem")) Then '
+
+                                    Session("Registered") = "True"
+                                    btnRegister.Text = "Update Registration"
+
                                     Label1.BackColor = Drawing.Color.Yellow
+                                    Label1.ForeColor = Drawing.Color.Black
                                     Label1.Text = "Current enrollment still Active , You can  Print Enrollment Form to view Subjects Registered, or Update the Subjects"
-                                    txtNxtLvl.Text = drr("NxtLvl")
-                                    txtNxtSem.Text = drr("NxtSem")
+                                    txtNxtLvl.Text = CurrLevel
+                                    txtNxtSem.Text = CurrSemester
+                                    Session("Level") = CurrLevel
+                                    Session("Semester") = CurrSemester
                                     loadcurrentregistration()
 
-                                    lbSubjects.Visible = True
+
                                     pnlRegister.Visible = True
                                     pnlnextEnrollment.Visible = True
                                     hlViewEnrollmentForm.Visible = True
-                                    chkenableupdate.Checked = True
+
+                                    pnlViewEnrollment.CssClass = "divPanelMainRegVisible"
+                                    pnlReRegister.CssClass = "divPanelMainRegHidden"
 
                                     Exit Sub
 
@@ -162,20 +177,22 @@ Public Class RegisterSubjects
                                     NextLevel = drr("NxtLvl")
                                     NextSemster = drr("NxtSem")
                                     Label1.BackColor = Drawing.Color.Red
+                                    Label1.ForeColor = Drawing.Color.White
                                     getlevelsubs(getSubdesc(Trim(subjects))) ' Get next level subjects add them to existing proceed carrying subs
                                     txtNxtLvl.Text = NextLevel
                                     txtNxtSem.Text = NextSemster
                                     btnRegister.Enabled = "true"
                                     Label1.Text = "Repeating failed subjects ( Not Proceeding)"
-                                    chkenableupdate.Checked = False
+
                                 Else
                                     Label1.BackColor = Drawing.Color.Green
+                                    Label1.ForeColor = Drawing.Color.White
                                     getlevelsubs(getSubdesc(Trim(subjects))) ' Get next level subjects add them to existing proceed carrying subs
                                     txtNxtLvl.Text = NextLevel
                                     txtNxtSem.Text = NextSemster
                                     btnRegister.Enabled = True
                                     Label1.Text = "Proceeding To Next level"
-                                    chkenableupdate.Checked = False
+
                                 End If
 
 
@@ -190,6 +207,7 @@ Public Class RegisterSubjects
                                 If Proceed Then
                                     getlevelsubs("")
                                     Label1.BackColor = Drawing.Color.Green
+                                    Label1.ForeColor = Drawing.Color.White
                                     If (NextLevel = CurrLevel) And (NextSemster = CurrSemester) Then
                                         btnRegister.Enabled = False
                                         Label1.Text = "Graduating"
@@ -201,7 +219,7 @@ Public Class RegisterSubjects
                                         Label1.Text = "Proceeding to Next Level"
                                         txtNxtLvl.Text = NextLevel
                                         txtNxtSem.Text = NextSemster
-                                        chkenableupdate.Checked = False
+
 
                                     End If
 
@@ -218,6 +236,7 @@ Public Class RegisterSubjects
                             End If
                         Else ' No exams found i.e current enrollment is active 
                             Label1.BackColor = Drawing.Color.Yellow
+                            Label1.ForeColor = Drawing.Color.Black
                             ActiveEnrollment = True
                             Label1.Text = "Current enrollment still Active ,To Register for Next Enrollment , Select Next Level and Semester and click Retrieve subjects to choose subjects available for the Respective Next Enrollment Details."
                             txtNxtLvl.Text = CurrLevel
@@ -230,20 +249,24 @@ Public Class RegisterSubjects
                             txtNxtSem.Enabled = True
                             txtNxtSem.ReadOnly = False
 
+                            btnRegister.Text = "Update Registration"
 
-                            lbSubjects.Visible = True
                             pnlRegister.Visible = True
                             pnlnextEnrollment.Visible = True
-                            hlViewEnrollmentForm.Visible = True
-                            chkenableupdate.Checked = True
 
+                            Session("Registered") = "True"
+                            pnlViewEnrollment.CssClass = "divPanelMainRegVisible"
+                            pnlReRegister.CssClass = "divPanelMainHidden"
                         End If
                     End While
 
 
                 End If
             Catch ex As Exception
+                Label1.BackColor = Drawing.Color.Red
+                Label1.ForeColor = Drawing.Color.White
                 Label1.Text = ex.Message
+                pnlRegScreen.CssClass = "divPanelMainRegHidden"
             Finally
                 cnn.Close()
 
@@ -261,9 +284,10 @@ Public Class RegisterSubjects
         Dim cnn As SqlConnection = New SqlConnection(ConfigurationManager.ConnectionStrings("soccerConnectionString").ConnectionString)
         Dim sql As String
         Dim drr As SqlDataReader
-        sql = "select 'True' as Slct , case regstatus when 'Registered' then 'Drop' when 'Dropped' then 'Register' end as Register ,studentsubjects.subjectid , subject from studentsubjects " &
-            " inner join subjects on studentsubjects.subjectid = subjects.subjectid " &
-            " Where studentsubjects.studentid = '" & Student & "' and studentsubjects.year = '" & CurrLevel & "' and studentsubjects.semester = '" & CurrSemester & "' and studentsubjects.program = '" & Program & "'"
+        sql = "select 'False' as Slct , case regstatus when 'Registered' then 'Drop' when 'Dropped' then 'Register' end as Register ,s.subjectid , subjects.subject,P.level,'True' as ChangeReg,isnull(s.Comment,'') as Comment from studentsubjects S " &
+            " inner join subjects on s.subjectid = subjects.subjectid " &
+               " inner join subjectprograms P On p.subject = s.Subjectid  and p.program = '" & Program & "' " &
+            " Where s.studentid = '" & Student & "' and s.year = '" & CurrLevel & "' and s.semester = '" & CurrSemester & "' and s.program = '" & Program & "'"
         '           " union " &
         '           "select 'False' as Slct ,  'Drop'  as Register ,studentsubjects.subjectid , subject from studentsubjects " &
         '" inner join subjects on studentsubjects.subjectid = subjects.subjectid " &
@@ -278,7 +302,7 @@ Public Class RegisterSubjects
 
         gdSubjects.DataSource = drr
         gdSubjects.DataBind()
-        disableSelectColm(False)
+        disableSelectColm(True)
 
     End Sub
 
@@ -320,7 +344,7 @@ Public Class RegisterSubjects
 
 
 
-                sql = "select 'True' as Slct, 'Register' as Register,s.SubjectID ,s.Subject  from SubjectS S " &
+                sql = "select 'True' as Slct, 'Register' as Register,s.SubjectID ,s.Subject,p.level,'True' as ChangeReg,'First Sitting' as Comment   from SubjectS S " &
         " inner join SubjectPrograms P on p.subject = s.SubjectID " &
         " where p.Program = '" & Trim(Program) & "' and p.level = " & NextLevel & " and  p.semester = " & NextSemster & " " &
           " union " & addsubs
@@ -330,7 +354,7 @@ Public Class RegisterSubjects
             Else
 
 
-                sql = "select 'True' as Slct, 'Register' as Register ,s.SubjectID ,s.Subject  from SubjectS S " &
+                sql = "select 'True' as Slct, 'Register' as Register ,s.SubjectID ,s.Subject,p.level,'True' as ChangeReg,'First Sitting' as Comment   from SubjectS S " &
         " inner join SubjectPrograms P on p.subject = s.SubjectID " &
         " where p.Program = '" & Trim(Program) & "' and p.level = " & NextLevel & " and  p.semester =   " & NextSemster & ""
 
@@ -373,7 +397,9 @@ Public Class RegisterSubjects
 
     Protected Sub btnRegister_Click(sender As Object, e As EventArgs) Handles btnRegister.Click
 
-        Activateenrollemnt()
+        Session("ButtonClicked") = "Register"
+        Label6.Text = "Register Subjects?"
+        ModalPopupExtender_ConfirmReg.Show()
 
 
     End Sub
@@ -403,34 +429,43 @@ Public Class RegisterSubjects
 
 
 
-        If cnt = 0 Then
-            lbstatus.Text = "Select at Least 1 Subject."
 
-            Exit Sub
-        End If
 
         Try
+            If cnt = 0 Then
+                Throw New Exception("Select at Least 1 Subject.")
+
+
+            End If
+
+            If Trim(txtNxtLvl.Text) = 0 Or Trim(txtNxtSem.Text) = 0 Then
+                Throw New Exception("Invalid Next Enrollment Details.")
+            End If
+
             cnn2.Open()
             trans = cnn2.BeginTransaction
 
-            sql = "spMigrateStudent"
+            If Session("Registered") = "False" Then
 
-            cmd = New SqlCommand(sql, cnn2, trans)
-            With cmd
-                .CommandType = CommandType.StoredProcedure
-                .Parameters.AddWithValue("@stud", Student)
-                .Parameters.AddWithValue("@oldprogram", Program)
-                .Parameters.AddWithValue("@newprogram", Program)
-                .Parameters.AddWithValue("@oldlevel", txtLvl.Text)
-                .Parameters.AddWithValue("@newlevel", txtNxtLvl.Text)
-                .Parameters.AddWithValue("@oldsem", txtSem.Text)
-                .Parameters.AddWithValue("@newsem", txtNxtSem.Text)
-                .Parameters.AddWithValue("@keepoldclass", True)
-                .Parameters.AddWithValue("@user", Student)
-                .ExecuteNonQuery()
+                sql = "spMigrateStudent"
 
-            End With
-            If Not chkenableupdate.Checked Then
+                cmd = New SqlCommand(sql, cnn2, trans)
+                With cmd
+                    .CommandType = CommandType.StoredProcedure
+                    .Parameters.AddWithValue("@stud", Student)
+                    .Parameters.AddWithValue("@oldprogram", Program)
+                    .Parameters.AddWithValue("@newprogram", Program)
+                    .Parameters.AddWithValue("@oldlevel", txtLvl.Text)
+                    .Parameters.AddWithValue("@newlevel", txtNxtLvl.Text)
+                    .Parameters.AddWithValue("@oldsem", txtSem.Text)
+                    .Parameters.AddWithValue("@newsem", txtNxtSem.Text)
+                    .Parameters.AddWithValue("@keepoldclass", True)
+                    .Parameters.AddWithValue("@user", Student)
+                    .ExecuteNonQuery()
+
+                End With
+            End If
+            If Session("Registered") = "False" Then
                 sql = "delete studentsubjects where studentid = '" & Student & "' and year = '" & txtNxtLvl.Text & "' and semester = '" & txtNxtSem.Text & "' and program = '" & Program & "'"
                 cmd = New SqlCommand(sql, cnn2, trans)
                 cmd.CommandType = CommandType.Text
@@ -439,9 +474,12 @@ Public Class RegisterSubjects
 
 
             For Each row As GridViewRow In gdSubjects.Rows
+                Dim comment As String = ""
                 params = New List(Of SqlParameter)
                 Dim regstatus As String = CType(row.FindControl("Register"), DropDownList).Text
                 Dim chkd As Boolean = CType(row.FindControl("chkInclude"), CheckBox).Checked
+
+                comment = CType(row.FindControl("lbComment"), Label).Text
 
                 If chkd Then
                     sql = "spRegisterSubjects"
@@ -475,6 +513,9 @@ Public Class RegisterSubjects
                     param = New SqlParameter("@user", Student)
                     cmd.Parameters.Add(param)
 
+                    param = New SqlParameter("@comment", comment)
+                    cmd.Parameters.Add(param)
+
                     cmd.ExecuteNonQuery()
                 End If
 
@@ -486,22 +527,28 @@ Public Class RegisterSubjects
             Session("Level") = Val(txtNxtLvl.Text)
             Session("Semester") = Val(txtNxtSem.Text)
 
-            lbstatus.Text = "Registration successful,click on Link to print enrollment form"
-            hlViewEnrollmentForm.Visible = True
+            lblUpadateSubjectsResults.Text = "Registration successful,click on Link to View Enrollment Form"
+            pnlViewEnrollment.CssClass = "divPanelMainRegVisible"
+            Session("RegSuccess") = "True"
+
+            NotifyStudent(EmailType.ExamRegistration)
 
 
 
             ' cnn2.Close()
         Catch ex As Exception
 
-            lbstatus.Text = "Registration failed ,contact Registrar's office for assistance - " & ex.Message
-            hlViewEnrollmentForm.Visible = False
+            If Not IsNothing(trans) Then trans.Rollback()
+
+            lblUpadateSubjectsResults.Text = "Registration failed ,contact Exam's office for assistance - " & ex.Message
+            pnlViewEnrollment.CssClass = "divPanelMainRegHidden"
+            Session("RegSuccess") = "False"
         Finally
             cnn2.Close()
         End Try
 
 
-
+        ModalPopupExtender_Subjects.Show()
 
 
 
@@ -527,12 +574,99 @@ Public Class RegisterSubjects
             disableSelectColm(True)
 
             If (Val(txtNxtLvl.Text) = Val(txtLvl.Text)) And (Val(txtNxtSem.Text) = Val(txtSem.Text)) Then
-                chkenableupdate.Checked = True
+                Session("Registered") = "True"
             Else
-                chkenableupdate.Checked = False
+                Session("Registered") = "False"
             End If
 
 
         End With
     End Sub
+
+    Protected Sub gdSubjects_SelectedIndexChanged(sender As Object, e As EventArgs) Handles gdSubjects.SelectedIndexChanged
+
+    End Sub
+
+    Protected Sub btnReRegister_Click(sender As Object, e As EventArgs) Handles btnReRegister.Click
+        Session("ButtonClicked") = "Re-Register"
+        Label6.Text = "This Deletes your Current Registration and re-runs the decision for your latest Exam.Do you want to Continue?"
+        ModalPopupExtender_ConfirmReg.Show()
+    End Sub
+
+    Protected Sub hideResultsModalPopupViaServer_Click(sender As Object, e As EventArgs) Handles hideResultsModalPopupViaServer.Click
+        If Session("RegSuccess") = "True" Then
+            Response.Redirect("~/Student/RegisterSubjects.aspx")
+        End If
+    End Sub
+
+    Protected Sub btnConfirmReg_Click(sender As Object, e As EventArgs) Handles btnConfirmReg.Click
+        If Session("ButtonClicked") = "Register" Then
+            Activateenrollemnt()
+        ElseIf Session("ButtonClicked") = "Re-Register" Then
+            DeleteRegistration()
+        End If
+    End Sub
+
+    Private Sub DeleteRegistration()
+        Dim cmd As SqlCommand
+
+        Dim cnn As SqlConnection = New SqlConnection(ConnectionString)
+        sql = "spDeleteRegistration"
+
+
+        Try
+            cnn.Open()
+            cmd = New SqlCommand()
+            cmd.CommandText = sql
+            cmd.Connection = cnn
+            cmd.Parameters.AddWithValue("@student", Session("userName"))
+            cmd.Parameters.AddWithValue("@prog", Session("Program"))
+            cmd.Parameters.AddWithValue("@lvl", Session("Level"))
+            cmd.Parameters.AddWithValue("@sem", Session("Semester"))
+
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.ExecuteNonQuery()
+            NotifyStudent(EmailType.RegistrationCancelled)
+            Response.Redirect("~/Student/RegisterSubjects.aspx")
+
+        Catch ex As Exception
+            lblUpadateSubjectsResults.Text = "Re-Registration Failed : " & ex.Message
+            ModalPopupExtender_Subjects.Show()
+        Finally
+            cnn.Close()
+        End Try
+    End Sub
+
+    Private Sub NotifyStudent(EmailType As EmailType)
+        Dim enrol As New Enrol
+
+        With enrol
+            .FullName = Session("FullName")
+            .Email = Session("Email")
+            .ExamSession = txtProgram.Text & " - " & txtNxtLvl.Text & "." & txtNxtSem.Text
+        End With
+
+
+        '   SendEmail(enrol, EmailType,, NotificationMsg(EmailType))
+    End Sub
+    Private Function NotificationMsg(Emailytype As EmailType) As String
+
+        Dim msg As String = ""
+
+        Select Case Emailytype
+            Case EmailType.ExamRegistration
+                msg = "You have successfully Registered/Updated your registration for " & txtProgram.Text & "-" & txtNxtLvl.Text & "." & txtNxtSem.Text & vbNewLine &
+        "Use your TAMS's Portal Account to Update or Cancel your Registration, if need be. " & vbNewLine
+            Case EmailType.RegistrationCancelled
+                msg = "Your Registration for " & txtProgram.Text & "-" & txtNxtLvl.Text & "." & txtNxtSem.Text & " has been cancelled, Use your Trust Academy  Portal to Re-Register for this Exam, if need be, or contact Trust Academt Exam Department for further assistance." & vbNewLine
+
+
+        End Select
+
+
+        msg = msg & "Please note , this is an automatically generated email." & vbNewLine & "You cant respond to it .For any further assistance please contact Trust Academy Exams department."
+
+        Return msg
+
+    End Function
 End Class

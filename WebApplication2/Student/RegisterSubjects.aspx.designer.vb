@@ -14,6 +14,24 @@ Option Explicit On
 Partial Public Class RegisterSubjects
     
     '''<summary>
+    '''RegUpdateProgress control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents RegUpdateProgress As Global.System.Web.UI.UpdateProgress
+    
+    '''<summary>
+    '''UpdExamExntry control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents UpdExamExntry As Global.System.Web.UI.UpdatePanel
+    
+    '''<summary>
     '''Label1 control.
     '''</summary>
     '''<remarks>
@@ -23,13 +41,13 @@ Partial Public Class RegisterSubjects
     Protected WithEvents Label1 As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''chkenableupdate control.
+    '''pnlRegScreen control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents chkenableupdate As Global.System.Web.UI.WebControls.CheckBox
+    Protected WithEvents pnlRegScreen As Global.System.Web.UI.WebControls.Panel
     
     '''<summary>
     '''pnlCurrentEnrol control.
@@ -39,6 +57,24 @@ Partial Public Class RegisterSubjects
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents pnlCurrentEnrol As Global.System.Web.UI.WebControls.Panel
+    
+    '''<summary>
+    '''pnlCurrentHeader control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents pnlCurrentHeader As Global.System.Web.UI.WebControls.Panel
+    
+    '''<summary>
+    '''Label3 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Label3 As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
     '''txtProgram control.
@@ -86,6 +122,24 @@ Partial Public Class RegisterSubjects
     Protected WithEvents pnlnextEnrollment As Global.System.Web.UI.WebControls.Panel
     
     '''<summary>
+    '''Panel8 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Panel8 As Global.System.Web.UI.WebControls.Panel
+    
+    '''<summary>
+    '''Label5 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Label5 As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
     '''txtNxtLvl control.
     '''</summary>
     '''<remarks>
@@ -93,6 +147,15 @@ Partial Public Class RegisterSubjects
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtNxtLvl As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''Label2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Label2 As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
     '''txtNxtSem control.
@@ -111,15 +174,6 @@ Partial Public Class RegisterSubjects
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btnRetrieveLevelSubs As Global.System.Web.UI.WebControls.Button
-    
-    '''<summary>
-    '''lbSubjects control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lbSubjects As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
     '''gdSubjects control.
@@ -149,13 +203,31 @@ Partial Public Class RegisterSubjects
     Protected WithEvents btnRegister As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
-    '''lbstatus control.
+    '''pnlReRegister control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lbstatus As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents pnlReRegister As Global.System.Web.UI.WebControls.Panel
+    
+    '''<summary>
+    '''btnReRegister control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnReRegister As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''pnlViewEnrollment control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents pnlViewEnrollment As Global.System.Web.UI.WebControls.Panel
     
     '''<summary>
     '''hlViewEnrollmentForm control.
@@ -165,24 +237,6 @@ Partial Public Class RegisterSubjects
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents hlViewEnrollmentForm As Global.System.Web.UI.WebControls.HyperLink
-    
-    '''<summary>
-    '''pnl223 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents pnl223 As Global.System.Web.UI.WebControls.Panel
-    
-    '''<summary>
-    '''Panel7 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents Panel7 As Global.System.Web.UI.WebControls.Panel
     
     '''<summary>
     '''Panel1 control.
@@ -237,4 +291,121 @@ Partial Public Class RegisterSubjects
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Panel6 As Global.System.Web.UI.WebControls.Panel
+    
+    '''<summary>
+    '''Button13 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Button13 As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''ModalPopupExtender_Subjects control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ModalPopupExtender_Subjects As Global.AjaxControlToolkit.ModalPopupExtender
+    
+    '''<summary>
+    '''pnlSubjectsResultPopup control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents pnlSubjectsResultPopup As Global.System.Web.UI.WebControls.Panel
+    
+    '''<summary>
+    '''ExamRegInfoHeader control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ExamRegInfoHeader As Global.System.Web.UI.WebControls.Panel
+    
+    '''<summary>
+    '''Label7 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Label7 As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''lblUpadateSubjectsResults control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblUpadateSubjectsResults As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''hideResultsModalPopupViaServer control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents hideResultsModalPopupViaServer As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''Button1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Button1 As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''ModalPopupExtender_ConfirmReg control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ModalPopupExtender_ConfirmReg As Global.AjaxControlToolkit.ModalPopupExtender
+    
+    '''<summary>
+    '''pnlConfirmReg control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents pnlConfirmReg As Global.System.Web.UI.WebControls.Panel
+    
+    '''<summary>
+    '''Label6 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Label6 As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''btnConfirmReg control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnConfirmReg As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''Button2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Button2 As Global.System.Web.UI.WebControls.Button
 End Class

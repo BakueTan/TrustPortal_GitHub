@@ -50,13 +50,58 @@ Partial Public Class Master1
     Protected WithEvents Image5 As Global.System.Web.UI.WebControls.Image
     
     '''<summary>
-    '''Label1 control.
+    '''Label3 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Label1 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents Label3 As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''imgDdMenu control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents imgDdMenu As Global.System.Web.UI.WebControls.Image
+    
+    '''<summary>
+    '''lnkLoggeduser control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lnkLoggeduser As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''imgDdMenu_HoverMenuExtender control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents imgDdMenu_HoverMenuExtender As Global.AjaxControlToolkit.HoverMenuExtender
+    
+    '''<summary>
+    '''lnkLoggeduser_RoundedCornersExtender control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lnkLoggeduser_RoundedCornersExtender As Global.AjaxControlToolkit.RoundedCornersExtender
+    
+    '''<summary>
+    '''HoverMenuExtender control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents HoverMenuExtender As Global.AjaxControlToolkit.HoverMenuExtender
     
     '''<summary>
     '''HlHome control.
@@ -95,33 +140,6 @@ Partial Public Class Master1
     Protected WithEvents lnkReturningStudent As Global.System.Web.UI.WebControls.HyperLink
     
     '''<summary>
-    '''lnkLoggeduser control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lnkLoggeduser As Global.System.Web.UI.WebControls.Label
-    
-    '''<summary>
-    '''lnkLoggeduser_RoundedCornersExtender control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lnkLoggeduser_RoundedCornersExtender As Global.AjaxControlToolkit.RoundedCornersExtender
-    
-    '''<summary>
-    '''lnkLogout_HoverMenuExtender control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lnkLogout_HoverMenuExtender As Global.AjaxControlToolkit.HoverMenuExtender
-    
-    '''<summary>
     '''PopUpMenuLogin control.
     '''</summary>
     '''<remarks>
@@ -149,6 +167,69 @@ Partial Public Class Master1
     Protected WithEvents lnkChangePassword As Global.System.Web.UI.WebControls.LinkButton
     
     '''<summary>
+    '''PopUpMenuLogin_RoundedCornersExtender control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents PopUpMenuLogin_RoundedCornersExtender As Global.AjaxControlToolkit.RoundedCornersExtender
+    
+    '''<summary>
+    '''pnlmenu control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents pnlmenu As Global.System.Web.UI.WebControls.Panel
+    
+    '''<summary>
+    '''divMobile control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents divMobile As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    
+    '''<summary>
+    '''Hlhome2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Hlhome2 As Global.System.Web.UI.WebControls.HyperLink
+    
+    '''<summary>
+    '''hlStudExams2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents hlStudExams2 As Global.System.Web.UI.WebControls.HyperLink
+    
+    '''<summary>
+    '''hlPayments2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents hlPayments2 As Global.System.Web.UI.WebControls.HyperLink
+    
+    '''<summary>
+    '''lnkReturningStudent2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lnkReturningStudent2 As Global.System.Web.UI.WebControls.HyperLink
+    
+    '''<summary>
     '''ContentPlaceHolder1 control.
     '''</summary>
     '''<remarks>
@@ -158,13 +239,22 @@ Partial Public Class Master1
     Protected WithEvents ContentPlaceHolder1 As Global.System.Web.UI.WebControls.ContentPlaceHolder
     
     '''<summary>
-    '''Label2 control.
+    '''pnlFooter control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Label2 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents pnlFooter As Global.System.Web.UI.WebControls.Panel
+    
+    '''<summary>
+    '''lbCopyRight control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbCopyRight As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
     '''Image2 control.

@@ -27,85 +27,137 @@
                         ImageUrl="~/Images/TRUST-ACADEMY3-e1429549503520.png" style="margin-left: 0px" 
                       />
                        </div>
- 
-                       
+   <div>
+                        <asp:Label 
+                        ID="Label3" runat="server" Text="STUDENT PORTAL" Font-Bold="True" 
+                        Font-Names="Arial Black" Font-Size="0.8em" ForeColor="Black"></asp:Label>
+                </div>
+           
+                        <div style="background-color:black;display:flex;flex-direction:row; width:100%;height:2em"  >
+              <div class="ToogleImage" >
+                             <asp:image runat ="server" ID ="imgDdMenu" ImageUrl="~/Images/Toogle.png"  CausesValidation="False"  Height="25px" Width="40px" style="margin-left:3PX;margin-top:3PX"/>
+          
+              </div>
+  <div style="width:100%">
+ <asp:label ID="lnkLoggeduser" runat="server"    CausesValidation="False"  ForeColor="White"  style="float:right;" CLASS="LoginStatus" ></asp:label>
+  </div>
+                   
              
+               
+           
+        
+
+            
+     </div>   
+                       
                                        
              
-                               
-              
-               
-                    
-   <asp:Panel runat="server">
-                                  </asp:Panel>
-                                      </div>
-                                      <div style="float:right">
-                                             <asp:Panel runat="server">
-                                  </asp:Panel>
-                                      </div>
-                         
-       
-          
-                <div>
-                        <asp:Label 
-                        ID="Label1" runat="server" Text="PORTAL" Font-Bold="True" 
-                        Font-Names="Arial Black" Font-Size="Larger" ForeColor="Black"></asp:Label>
-                </div>
+  <ajaxToolkit:HoverMenuExtender ID="imgDdMenu_HoverMenuExtender" runat="server" BehaviorID="imgDdMenu_HoverMenuExtender" DynamicServicePath="" PopupControlID="pnlmenu" PopupPosition="Bottom" TargetControlID="imgDdMenu">
+          </ajaxToolkit:HoverMenuExtender>
+
+                  <ajaxToolkit:RoundedCornersExtender ID="lnkLoggeduser_RoundedCornersExtender" runat="server" BehaviorID="lnkLoggeduser_RoundedCornersExtender" BorderColor="ActiveBorder" Radius="10" TargetControlID="lnkLoggeduser" />
+         
+        <ajaxToolkit:HoverMenuExtender ID="HoverMenuExtender" runat="server" BehaviorID="lnkLogout_HoverMenuExtender" DynamicServicePath="" TargetControlID="lnkLoggedUser" PopupControlID="PopUpMenuLogin" PopupPosition="Bottom" OffsetX="5">
+                </ajaxToolkit:HoverMenuExtender>
+
+          <div style="display:flex;flex-direction:row;width:100%">
            
        
          
 
-         
-         
-
-        <div class="divMenu">
-            
-                    <asp:HyperLink ID="HlHome" runat="server" NavigateUrl="~/Student/LoggedIn.aspx" CssClass="MenuLink">Home</asp:HyperLink>
-                    <asp:HyperLink ID="hlStudExams" runat="server" NavigateUrl="~/Student/StudentReport.aspx" CssClass="MenuLink" Visible="False">Exam Results</asp:HyperLink>
-                    <asp:HyperLink ID="hlPayments" runat="server" NavigateUrl="~/Student/FeesPayments.aspx" CssClass="MenuLink" Visible="False">FeesPayments</asp:HyperLink>
-                    <asp:HyperLink ID="lnkReturningStudent" runat="server" NavigateUrl="~/Student/RegisterSubjects.aspx" CssClass="MenuLink" Visible="False" >Subject Registration</asp:HyperLink>
-                <asp:label ID="lnkLoggeduser" runat="server"   style="float:right"  CausesValidation="False" text ="Logged User"  CssClass ="LoginStatus"/> 
-             
-   
-                           <ajaxToolkit:RoundedCornersExtender ID="lnkLoggeduser_RoundedCornersExtender" runat="server" BehaviorID="lnkLoggeduser_RoundedCornersExtender" TargetControlID="lnkLoggeduser" />
-             
-   
-            <ajaxToolkit:HoverMenuExtender ID="lnkLogout_HoverMenuExtender" runat="server" BehaviorID="lnkLogout_HoverMenuExtender" DynamicServicePath="" TargetControlID="lnkLoggedUser" PopupControlID="PopUpMenuLogin" PopupPosition="Bottom" OffsetX="-20">
-                </ajaxToolkit:HoverMenuExtender>
-            
+         <div class="col">
+        
+        <div id ="divNormal" class="divMenu">
             <div>
-                <asp:Panel CssClass="popupMenu" ID="PopUpMenuLogin" runat="server">
-                                <div style="border: 1px outset white; padding: 2px;background-color:black">
+                    <asp:HyperLink ID="HlHome" runat="server" NavigateUrl="~/Student/LoggedIn.aspx" CssClass="MenuLink">Home</asp:HyperLink>
+
+            </div>
+
+            <div>
+                    <asp:HyperLink ID="hlStudExams" runat="server" NavigateUrl="~/Student/StudentReport.aspx" CssClass="MenuLink" Visible="False">Exam Results</asp:HyperLink>
+
+            </div>
+
+            <div>
+                    <asp:HyperLink ID="hlPayments" runat="server" NavigateUrl="~/Student/FeesPayments.aspx" CssClass="MenuLink" Visible="False">FeesPayments</asp:HyperLink>
+
+            </div>
+            <div>
+                    <asp:HyperLink ID="lnkReturningStudent" runat="server" NavigateUrl="~/Student/RegisterSubjects.aspx" CssClass="MenuLink" Visible="False" >Register Subjects</asp:HyperLink>
+
+            </div>
+               
+            
+
+                </div>
+             
+              </div>
+
+                  <asp:Panel CssClass="popupMenu" ID="PopUpMenuLogin" runat="server" BorderStyle="None" HorizontalAlign="Justify">
+                                <div style="border: 1px outset white; padding: 2px;background-color:mediumblue;">
                                     <div>
                                         <asp:LinkButton ID="lnkLoginStats" runat="server"  Text="LogOut" CausesValidation="False" ForeColor="White" />
                                     </div>
                                     <div>
-                                        <asp:LinkButton ID="lnkChangePassword" runat="server" Text="Change Password" ForeColor="White" PostBackUrl="~/Admin/ChangePasswordPortal.aspx" />
+                                        <asp:LinkButton ID="lnkChangePassword" runat="server" Text="Change Password" ForeColor="White" CausesValidation="False" PostBackUrl="~/Admin/ChangePasswordPortal.aspx" />
                                     </div>
                                 </div>
                             </asp:Panel>
-            </div>
+                 
+                    <ajaxToolkit:RoundedCornersExtender ID="PopUpMenuLogin_RoundedCornersExtender" runat="server" BehaviorID="PopUpMenuLogin_RoundedCornersExtender" TargetControlID="PopUpMenuLogin" />
 
-                </div>
+              <asp:panel ID ="pnlmenu" runat ="server" style="background-color:black" >
+              
+              <div ID="divMobile" runat ="server"  class="divMenu2" >
+
+ 
             
-  <div>
+            <div>
+                    <asp:HyperLink ID="Hlhome2" runat="server" NavigateUrl="~/Student/LoggedIn.aspx" CssClass="MenuLink">Home</asp:HyperLink>
+
+            </div>
+                  <div>
+                  <asp:HyperLink ID="hlStudExams2" runat="server" NavigateUrl="~/Student/StudentReport.aspx" CssClass="MenuLink" Visible="False" >Exam Results</asp:HyperLink>
+
+                  </div>
+
+                  <div>
+               <asp:HyperLink ID="hlPayments2" runat="server" NavigateUrl="~/Student/FeesPayments.aspx" CssClass="MenuLink" Visible="False" >FeesPayments</asp:HyperLink>
+
+                  </div>
+
+                  <div>
+                  <asp:HyperLink ID="lnkReturningStudent2" runat="server" NavigateUrl="~/Student/RegisterSubjects.aspx" CssClass="MenuLink"  >Register Subjects</asp:HyperLink>
+
+                  </div>
+           
+                   
+         
+           
+                 
+                </div>
+          
+              </asp:panel>
+         
+
+
+            
+  <div style="width:100%">
              <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">          
             
                   </asp:ContentPlaceHolder>
                               </div>
-        <div>
-             <table width ="100%">
-                                    <tr>
-                                        <td width ="50%" align ="right">
-                                               <asp:Label ID="Label2" runat="server" Text="©2019 Imela Technologies"></asp:Label>
-                                        </td>
-                                        <td width = "50%" align ="left">
 
-                                 <asp:Image ID="Image2" runat="server" Height="28px" ImageUrl="~/Images/Imela.png" Width="138px" />  
+          </div>
 
-                                        </td>
-                                    </tr>
-                                </table>
+             <asp:Panel ID ="pnlFooter" runat ="server" Width ="100%">
+ <div style="width:50%;float:left;">
+                   <asp:Label ID="lbCopyRight" runat="server" Text="©2019 Imela Technologies" Font-sixe="0.8em" style="float:right"></asp:Label>
+             </div>
+          <div style="width:50%;float:right">
+                  <asp:Image ID="Image2" runat="server" Height="28px" ImageUrl="~/Images/Imela.png" Width="138px" style="margin-left:0.3em" />  
+            </div>
+     </asp:Panel>
         </div>
     
     </form>

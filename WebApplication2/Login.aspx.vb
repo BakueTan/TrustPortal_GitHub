@@ -184,6 +184,7 @@ Partial Public Class _Default
                     Session("Level") = loggedUser.lvl
                     Session("Semester") = loggedUser.Sem
                     Session("Email") = Loggeduser.Email
+                    ' Session("UserEmail") = Loggeduser.UserEmail
 
 
                     Response.Redirect("~/Student/LoggedIn.aspx")

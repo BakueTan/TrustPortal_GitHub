@@ -36,8 +36,10 @@ Public Class ApplicationForm
                 Dim dobdate As Date
 
                 wzAppForm.ActiveStepIndex = 0
+                LoadKnowHow()
                 ' ref =
                 Dim info As SqlDataReader = Nothing
+
 
                 If ref <> "" Then
                     sql = "select * from studentapplication where appreference = '" & ref & "'"
@@ -82,6 +84,7 @@ Public Class ApplicationForm
                         txtNokEmail.Text = info("NOKEmail").ToString
                         LoadFiles()
                         loadSubjects()
+
 
 
 
@@ -933,6 +936,28 @@ Public Class ApplicationForm
 
         End While
     End Sub
+
+    Private Sub LoadKnowHow()
+        Dim progcount As Integer = 0
+        Dim sql As String
+        Dim docs As SqlDataReader
+        dpKnowhow.Items.Clear()
+
+
+        dpKnowhow.Items.Add(New ListItem("How did you know about Trust Academy?", "-1"))
+
+
+        Dim j As Integer = 0
+        sql = "select distinct mode from knowhow order by mode asc  "
+
+        docs = ExecuteReader(sql,, True)
+        While docs.Read
+            dpKnowhow.Items.Add(docs(0))
+
+        End While
+
+    End Sub
+
     Private Sub getIntakes()
         Dim progcount As Integer = 0
         Dim sql As String

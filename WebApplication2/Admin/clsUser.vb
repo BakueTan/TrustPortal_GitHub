@@ -24,6 +24,7 @@ Public Class clsUser
     Public Property GroupName As String
 
     Public Property userName() As String
+    Public Property UserEmail As String
 
     Public Property Email As String
 
@@ -104,7 +105,7 @@ Public Class clsUser
                 cmd.ExecuteNonQuery()
 
                 StaffType = cmd.Parameters("@usertype").Value.ToString
-
+                '      UserEmail = cmd.Parameters("@usermail").Value.ToString
 
 
                 Valid = True

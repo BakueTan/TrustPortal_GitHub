@@ -6,6 +6,13 @@
     flex-direction:column;
 }
 
+.divMainStandard {
+    width: 100%;
+    background-color: white;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
 
 
 
@@ -58,13 +65,46 @@
 }
 
 .divMenu {
-    border-bottom:solid;
-    border-top:solid;
-    border-top-color:black ;
-    border-bottom-color:black;
-    border-width:thin;
-    background-color:firebrick
+    border-bottom: solid;
+    border-top: solid;
+    border-top-color: black;
+    border-bottom-color: black;
+    border-width: thin;
+    background-color: black;
+    flex-direction: column;
+    height: 100%;
+    display: none;
+    flex-wrap: wrap;
 }
+
+.divMenuBasic {
+    border-bottom: solid;
+    border-top: solid;
+    border-top-color: black;
+    border-bottom-color: black;
+    border-width: thin;
+    background-color: black;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width:100%
+}
+
+divMenu2 {
+    border-bottom: solid;
+    border-top: none;
+    padding-top: 0.5em;
+    padding-left: 0.3em;
+    padding-right: 0.1em;
+    border-bottom-color: black;
+    border-width: thin;
+    background-color: black;
+    /*width: 100%;*/
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+}
+
 .Inputdiv {
     display: flex;
     flex-direction: column;
@@ -82,7 +122,7 @@
     flex-wrap: wrap;
     /*padding-bottom: 0.5em;*/
     width: 100%;
-    height: 4em;
+    height: 6em;
     /*margin:auto;
     width:50%;*/
     /*padding-left:15px;*/
@@ -125,24 +165,23 @@
 }
 
 
-.LoginButton1 {
-    background-color: firebrick;
-    color:white;
-    height:2.5em;
-    border-radius:10px;
+.LoginButton1, .RegisterButton {
+    background-color: #f2f2f2;
+    color: black;
+    height: 3em;
+    border: none;
+    border-radius: 10px;
+    width: 100%;
 }
 
-.LoginButton1,.RegisterButton{
-    width:100%;
 
-}
 
-.LoginButton1:hover{
-    background-color: firebrick;
-        Color:white;
-    border:none;
-
-}
+    .LoginButton1:hover {
+        background-color: firebrick;
+        Color: white;
+        border: none;
+        border-radius: 10px;
+    }
 
     .RegisterButton:hover {
         background-color: firebrick;
@@ -195,46 +234,35 @@
     background-color: firebrick;
     color: white;
 }
+
+
 .LoginStatus {
-    display: inline-block;
     font-style: normal;
     text-decoration: none;
     color: white;
-    padding-bottom: 3px;
-    padding-top: 3px;
-    padding-left: 10px;
     border: none;
-  float:right;
-    background-color:green;
- 
+    background-color: green;
+    height: 1.5em;
+    /*float:right;*/
+    /*float: none;*/
+    /*padding-right:0.4em;*/
+    /*margin-left:0.5em;*/
+    padding-top: 0.4EM;
 }
 
 
 .MenuLink {
-    display: inline-flex;
-    font-style:normal;
-    text-decoration :none;
+    font-style: normal;
+    text-decoration: none;
     color: white;
-    padding-bottom:3px ;
-    padding-top:3px;
-   padding-left : 10px;
-    border:none;
- flex-wrap:wrap;   
- 
+    border: none;
 }
 
 .MenuLinkHighlighted {
-    display: inline-flex;
     font-style: normal;
-    text-decoration: none;
-    color: firebrick;
-    padding-bottom: 3px;
-    padding-top: 3px;
-    padding-left: 10px;
+    text-decoration: underline;
+    color: lightskyblue;
     border: none;
-    flex-wrap: wrap;
-     border-color: black;
-    background-color: white;
 }
 
 .btn {
@@ -264,6 +292,25 @@
     width: auto
 }
 
+.RegButton {
+    font-style: normal;
+    text-decoration: none;
+    color: white;
+    padding-bottom: 3px;
+    padding-top: 3px;
+    border: none;
+    background-color: green;
+    font-weight: bold;
+    Font-Size: larger;
+    text-wrap: normal;
+}
+
+    .RegButton:hover {
+        border-color: Black;
+        background-color: black;
+        border-radius: 25%;
+    }
+
     .LoginStatus:hover, .btn:hover {
         background-color: darkgreen;
     }
@@ -272,11 +319,20 @@
     }*/
 
 
-    .MenuLink:hover,.btnCancel:hover {
+    .btnCancel:hover {
         color: white;
         border-color: white;
         background-color:black;
     }
+
+
+.MenuLink:hover {
+    color: black;
+    border-color: white;
+    background-color: white;
+    /*border-radius: 25%;*/
+    font-size: larger;
+}
 
 .modalBackground {
     background-color: Gray;
@@ -288,6 +344,7 @@
     background-color: white;
     width:200px;
     color:black;
+ 
 
 }
 
@@ -336,18 +393,78 @@ div.SideBarWidth {
     margin: auto;
     display: flex;
     flex-direction: column;
+    width:100%;
+}
+
+.RegisterbuttonsDiv {
+    display: flex;
+    justify-content: flex-start;
+    background-color: whitesmoke;
+}
+
+.divPanelMainRegVisible {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.divPanelMainRegHidden {
+    display: none;
+}
+
+
+.col {
+    flex: 0 0 auto;
+}
+
+
+.col-auto {
+    flex: 0 0 auto;
+    width: auto;
+}
+
+.ToogleImage {
+    display: flex;
 }
 
 
 @media only screen and (min-width: 768px) {
 
+    div.ToogleImage {
+        display: none;
+    }
+
+    div.divMenu {
+        display: flex;
+        /*float:right;*/
+        flex-wrap: nowrap;
+        flex-direction: column;
+        vertical-align: middle;
+        height: 100%;
+    }
+
+
+    div.RegisterbuttonsDiv {
+        display: flex;
+        justify-content: center;
+        background-color: whitesmoke;
+    }
+
     div.divMain {
+        width: 100%;
+    }
+
+    div.divMainStandard {
         width: 50%;
+    }
+
+    div.divMenu2 {
+        display: none;
     }
 
 
     div.divMainLogin {
-        width: 50%;
+        width: 30%;
         margin: auto
     }
 
@@ -367,7 +484,7 @@ div.SideBarWidth {
 
     div.LoginButton1 {
       
-        width: 50%
+        width: 100%
     }
     div.RegisterButton {
         width: 50%

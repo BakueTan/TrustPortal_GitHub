@@ -16,30 +16,42 @@ Partial Public Class Master1
         If IsNothing(Session("userName")) Or Session("userName") = "" Then
             lnkLoggeduser.Text = "Login"
             'Login1.Enabled = True
-            lnkChangePassword.Visible = False
+            '   lnkChangePassword2.Visible = False
             HlHome.Visible = False
             hlStudExams.Visible = False
-
+            hlStudExams2.Visible = False
+            lnkChangePassword.Visible = False
             lnkLoginStats.Text = "Login"
+
+            '     lnkLoginStats2.Text = "Login"
 
             hlPayments.Visible = False
             lnkReturningStudent.Visible = False
 
+            hlPayments2.Visible = False
+            lnkReturningStudent2.Visible = False
+            Hlhome2.Visible = False
+            imgDdMenu.Visible = False
+
         Else
 
             If Session("Group") = "Students" Then
-
+                imgDdMenu.Visible = True
                 lnkLoggeduser.Text = Session("FullName")
                 HlHome.Visible = True
+                Hlhome2.Visible = True
                 hlStudExams.Visible = True
+                hlStudExams2.Visible = True
 
 
 
                 lnkChangePassword.Visible = True
                 lnkLoginStats.Text = "LogOut"
                 hlPayments.Visible = True
+                hlPayments2.Visible = True
 
                 lnkReturningStudent.Visible = True
+                lnkReturningStudent2.Visible = True
 
             ElseIf Session("Group") = "Lects" Then
 
@@ -68,7 +80,6 @@ Partial Public Class Master1
                 '  hlStudPers.Visible = False
                 'Login1.CreateUserText = ""
                 ' Login1.PasswordRecoveryText = ""
-
 
 
 
@@ -128,7 +139,7 @@ Partial Public Class Master1
 
         ' End If
         Try
-            Label2.Text = strcopyright
+            lbCopyRight.Text = strcopyright
             GetActivepage()
 
         Catch ex As Exception
@@ -144,25 +155,41 @@ Partial Public Class Master1
         Select Case Session("ActivePage")
             Case "ExamResults"
                 hlStudExams.CssClass = "MenuLinkHighlighted"
+                hlStudExams2.CssClass = "MenuLinkHighlighted"
                 HlHome.CssClass = "MenuLink"
+                Hlhome2.CssClass = "MenuLink"
                 hlPayments.CssClass = "MenuLink"
+                hlPayments2.CssClass = "MenuLink"
                 lnkReturningStudent.CssClass = "MenuLink"
+                lnkReturningStudent2.CssClass = "MenuLink"
+
             Case "FeesPayments"
                 hlPayments.CssClass = "MenuLinkHighlighted"
+                hlPayments2.CssClass = "MenuLinkHighlighted"
                 hlStudExams.CssClass = "MenuLink"
+                hlStudExams2.CssClass = "MenuLink"
                 HlHome.CssClass = "MenuLink"
+                Hlhome2.CssClass = "MenuLink"
                 lnkReturningStudent.CssClass = "MenuLink"
+                lnkReturningStudent2.CssClass = "MenuLink"
             Case "Home"
                 HlHome.CssClass = "MenuLinkHighlighted"
+                Hlhome2.CssClass = "MenuLinkHighlighted"
                 hlStudExams.CssClass = "MenuLink"
+                hlStudExams2.CssClass = "MenuLink"
                 hlPayments.CssClass = "MenuLink"
+                hlPayments2.CssClass = "MenuLink"
                 lnkReturningStudent.CssClass = "MenuLink"
-
+                lnkReturningStudent2.CssClass = "MenuLink"
             Case "SubjectRegistration"
                 lnkReturningStudent.CssClass = "MenuLinkHighlighted"
+                lnkReturningStudent2.CssClass = "MenuLinkHighlighted"
                 hlStudExams.CssClass = "MenuLink"
+                hlStudExams2.CssClass = "MenuLink"
                 hlPayments.CssClass = "MenuLink"
+                hlPayments2.CssClass = "MenuLink"
                 HlHome.CssClass = "MenuLink"
+                Hlhome2.CssClass = "MenuLink"
         End Select
     End Sub
 

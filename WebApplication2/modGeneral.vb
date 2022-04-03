@@ -19,6 +19,8 @@ Public Enum EmailType
     ApplicationWithDrawn = 9
     PasswordRequest = 10
     UserCreated
+    ExamRegistration
+    RegistrationCancelled
 End Enum
 
 Public Module modGeneral
@@ -325,6 +327,7 @@ Public Module modGeneral
     Public Function SendEmail(ByVal stud As Enrol, emailtype As EmailType, Optional ByRef UI As Guid = Nothing, Optional msg As String = "") As Boolean
         Dim SmtpServer As New SmtpClient()
         Dim mail As New MailMessage()
+        osmtpclient = New CSmtp()
         Dim emailfrom As String = osmtpclient.MailFrom
         Dim password As String = osmtpclient.Password
         Dim messages As SqlDataReader
@@ -338,23 +341,33 @@ Public Module modGeneral
         Dim strmessage As String = ""
         Dim subject As String = ""
 
-        sql = "select [content],description from messages where [type] = '" & emailtype & "'"
-        messages = ExecuteReader(sql, , True)
 
-        If msg <> "" Then
-            strmessage = msg
+        Dim cnn As New SqlConnection(ConnectionString)
 
-        ElseIf messages.HasRows Then
-            While messages.Read
-                strmessage = messages(0)
-                subject = messages(1)
-            End While
-        Else
-      '      Throw New Exception("Messages not maintaned")
-            Return False
-        End If
+        Try
+
+            sql = "select [content],description from messages where [type] = '" & emailtype & "'"
+            cnn.Open()
+            Dim cmd As New SqlCommand(sql, cnn)
+            messages = cmd.ExecuteReader
+            If msg <> "" Then
+                strmessage = msg
+
+            ElseIf messages.HasRows Then
+                While messages.Read
+                    strmessage = messages(0)
+                    subject = messages(1)
+                End While
+            Else
+                '      Throw New Exception("Messages not maintaned")
+                Return False
+            End If
 
 
+        Catch ex As Exception
+        Finally
+            cnn.Close()
+        End Try
 
 
 
@@ -418,6 +431,15 @@ Public Module modGeneral
                 mail.Subject = "Password Request"
                 mail.Body = strmessage
 
+            ElseIf emailtype = EmailType.ExamRegistration Then
+
+                mail.Subject = stud.ExamSession & " Registration"
+                mail.Body = strmessage
+
+            ElseIf emailtype = emailtype.RegistrationCancelled Then
+
+                mail.Subject = stud.ExamSession & " Registration Cancelled"
+                mail.Body = strmessage
 
             End If
 

@@ -3,7 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <div style="display:flex ;flex-direction:column;width:50%;margin:auto;background-color:white;">
+    <div class="divMainLogin">
      <div>
            <h1>Change Password</h1>
      </div>

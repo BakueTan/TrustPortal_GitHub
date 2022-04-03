@@ -10,7 +10,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-  <div class="divMain">
+  <div class="divMainLogin"
 
              
                         <div>
@@ -79,11 +79,11 @@
                           <asp:Button ID="Button13" style="display:none" runat ="server" Text="Cancel" />              
                                             
                      <ajaxToolkit:ModalPopupExtender ID="ModalPopupExtender_Creater" runat="server" BehaviorID="btnConfirmPopUp_ModalPopupExtender" TargetControlID="Button13"
-                         PopupControlID="pnlCreateUserResultPopup"    BackgroundCssClass="modalBackground_Transparent">
+                         PopupControlID="pnlCreateUserResultPopup"    BackgroundCssClass ="modalBackground">
                      </ajaxToolkit:ModalPopupExtender>
                 
            
-            <asp:Panel runat="server" ID="pnlCreateUserResultPopup" Style="width:200px;border:solid;" CssClass ="modalPopup" BorderStyle="None" ForeColor="White" HorizontalAlign="Center"  >
+            <asp:Panel runat="server" ID="pnlCreateUserResultPopup" CssClass ="modalPopup"  HorizontalAlign="Center"  >
        <div>
            <asp:Label ID ="lbCreateUserResults" runat ="server" ></asp:Label>
        </div>

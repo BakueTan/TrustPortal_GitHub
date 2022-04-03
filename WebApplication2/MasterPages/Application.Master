@@ -60,7 +60,7 @@
          
          
 
-        <div style="border-bottom:solid;border-top:solid;border-top-color:black ;border-bottom-color:black;border-bottom-right-radius:10px;border-width:thin;background-color:firebrick">
+        <div style="border-bottom:solid;border-top:solid;border-top-color:black ;border-bottom-color:black;border-bottom-right-radius:10px;border-width:thin;background-color:black">
             
                      <asp:Button ID="Button1" runat="server" Text="Login"  CssClass ="LoginStatus" style="float:right"  CausesValidation="False" UseSubmitBehavior="false" />      
                  <asp:Hyperlink ID="Button2" runat="server" Text="PortalHome"  CssClass ="MenuLink" NavigateUrl="~/Login.aspx" />  
